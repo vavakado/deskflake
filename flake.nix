@@ -8,9 +8,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lix-module = {
+      url =
+        "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, zen-browser, spicetify-nix, ... }@inputs:
+  outputs = { self, nixpkgs, lix-module, ... }@inputs:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
@@ -20,7 +25,7 @@
             inherit self system;
             inherit inputs;
           };
-          modules = [ ./configuration.nix ];
+          modules = [ ./configuration.nix lix-module.nixosModules.default ];
         };
       };
     };
