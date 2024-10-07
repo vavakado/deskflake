@@ -89,7 +89,7 @@
         beautifulLyrics
       ];
       theme = spicePkgs.themes.text;
-      colorScheme = "base";
+      colorScheme = "RosePineDawn";
     };
 
   # List packages installed in system profile. To search, run:
