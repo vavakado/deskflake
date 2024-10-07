@@ -1,8 +1,6 @@
-{inputs,system, ...}:
-{
+{ inputs, system, ... }: {
 
-  environment.systemPackages =  [
-inputs.zen-browser.packages."${system}".default
-];
+  environment.systemPackages =
+    [ inputs.zen-browser.packages."${system}".default ];
 }
 

@@ -183,7 +183,6 @@
     zig
     keepassxc
     zoxide
-    nixd
     clang
     nwg-look
   ];

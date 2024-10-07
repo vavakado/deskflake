@@ -1,5 +1,6 @@
 {
-imports = [
-	./zen-browser.nix
-];
+  imports = [
+    ./zen-browser.nix
+    ./lsp-servers.nix
+  ];
 }
