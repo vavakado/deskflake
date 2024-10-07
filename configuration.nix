@@ -62,6 +62,7 @@
     fd
     feh
     ffmpeg
+    gnumake
     file-roller
     flite # for narrator
     foot

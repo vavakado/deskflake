@@ -1,13 +1,14 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    nixd
     docker-compose-language-service
+    dockerfile-language-server-nodejs
     gopls
-    vscode-langservers-extracted
     marksman
-    tailwindcss
-    typescript-language-server
+    nixd
     prettierd
     stylua
+    tailwindcss
+    typescript-language-server
+    vscode-langservers-extracted
   ];
 }
