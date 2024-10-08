@@ -6,6 +6,7 @@
     ./networking.nix
     ./nvidia.nix
     ./spicetify.nix
+    ./sunshine.nix
     ./zen-browser.nix
   ];
 }
