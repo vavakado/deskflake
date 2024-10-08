@@ -40,7 +40,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vavakado = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = [ ];
   };
 
@@ -51,6 +51,7 @@
     adwaita-icon-theme
     anki
     bat
+    bottles
     calibre
     chezmoi
     clang
@@ -62,7 +63,6 @@
     fd
     feh
     ffmpeg
-    gnumake
     file-roller
     flite # for narrator
     foot
@@ -73,6 +73,7 @@
     git-extras
     github-cli
     glow
+    gnumake
     go
     godot_4
     grim
@@ -121,6 +122,7 @@
     surrealist
     swaybg
     tealdeer
+    teamspeak5_client
     telegram-desktop
     thunderbird
     tmux
@@ -136,8 +138,7 @@
     wofi
     zig
     zoxide
-  teamspeak5_client
-];
+  ];
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
