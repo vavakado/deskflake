@@ -1,10 +1,11 @@
 {
   imports = [
-    ./zen-browser.nix
+    ./desktop.nix
+    ./docker.nix
     ./lsp-servers.nix
+    ./networking.nix
     ./nvidia.nix
     ./spicetify.nix
-    ./networking.nix
-    ./desktop.nix
+    ./zen-browser.nix
   ];
 }

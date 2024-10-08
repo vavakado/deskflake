@@ -40,7 +40,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vavakado = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     packages = [ ];
   };
 
@@ -136,7 +136,8 @@
     wofi
     zig
     zoxide
-  ];
+  teamspeak5_client
+];
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
