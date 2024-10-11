@@ -10,7 +10,8 @@
   # Enable USB redirection (optional)
   virtualisation.spiceUSBRedirection.enable = true;
 
+  environment.systemPackages = with pkgs; [ virt-manager ];
+  boot.kernelParams = [ "intel_iommu=on" "iommu=pt" ];
 
-  environment.systemPackages = with pkgs;
-    [ virt-manager gnome-boxes ];
+  virtualisation.libvirtd.hooks.qemu.hook = ./hook;
 }

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./bluetooth.nix
     ./desktop.nix
     ./docker.nix
     ./libvirt.nix

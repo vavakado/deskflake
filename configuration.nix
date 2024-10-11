@@ -40,12 +40,17 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vavakado = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "docker"
+      "libvirtd"
+      "kvm"
+      "input"
+    ]; # Enable ‘sudo’ for the user.
     packages = [ ];
   };
 
   environment.systemPackages = with pkgs; [
-    # lazydocker
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
@@ -67,6 +72,13 @@
     flite # for narrator
     foot
     freetube
+    steamtinkerlaunch
+    xdotool
+    xorg.xrandr
+    xorg.xwininfo
+    xorg.xprop
+    yad
+    unzip
     fzf
     gamescope
     git
@@ -84,7 +96,10 @@
     jellyfin-mpv-shim
     jq
     kdePackages.qt6ct
+		git-lfs
+		usbutils
     keepassxc
+    lazydocker
     localsend
     loupe
     mako
@@ -107,8 +122,11 @@
     pavucontrol
     pigz
     prismlauncher
+    protontricks
+    protonup-qt
     pv
     qt6.qtwayland
+    revolt-desktop
     ripgrep
     rsync
     rustup
@@ -134,6 +152,9 @@
     vim
     waybar
     wget
+    wine
+    wine64
+    winetricks
     wl-clipboard
     wofi
     zig
@@ -169,6 +190,7 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
