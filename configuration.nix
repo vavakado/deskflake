@@ -45,6 +45,7 @@
       "docker"
       "libvirtd"
       "kvm"
+      "uinput"
       "input"
     ]; # Enable ‘sudo’ for the user.
     packages = [ ];
@@ -96,8 +97,8 @@
     jellyfin-mpv-shim
     jq
     kdePackages.qt6ct
-		git-lfs
-		usbutils
+    git-lfs
+    usbutils
     keepassxc
     lazydocker
     localsend
