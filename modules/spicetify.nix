@@ -15,6 +15,6 @@
         beautifulLyrics
       ];
       theme = spicePkgs.themes.text;
-      colorScheme = "RosePineDawn";
+      colorScheme = "TokyoNight";
     };
 }

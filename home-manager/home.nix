@@ -6,6 +6,13 @@
 
   home.stateVersion = "24.11"; # don't change it bro
 
+  gtk.enable = true;
+  gtk.cursorTheme.package = pkgs.bibata-cursors;
+  gtk.cursorTheme.name = "Bibata-Modern-Classic";
+  gtk.theme.package = pkgs.tokyonight-gtk-theme;
+  gtk.theme.name = "Tokyonight-Dark";
+  gtk.iconTheme.package = pkgs.adwaita-icon-theme;
+  gtk.iconTheme.name = "Adwaita";
 
   programs = {
     #    direnv = {
@@ -51,15 +58,15 @@
     #      enableBashIntegration = true;
     #    };
 
-    rags = {
-      enable = true;
+    #ags = {
+    #  enable = true;
 
-      # null or path, leave as null if you don't want hm to manage the config
-      configDir = null;
+    #  # null or path, leave as null if you don't want hm to manage the config
+    #  configDir = null;
 
-      # additional packages to add to gjs's runtime
-      extraPackages = with pkgs; [ ];
-    };
+    #  # additional packages to add to gjs's runtime
+    #  extraPackages = with pkgs; [ ];
+    #};
 
     home-manager.enable = true;
   };
@@ -68,5 +75,5 @@
 
   #  home.sessionVariables = { EDITOR = "nvim"; };
   # home.sessionPath = [ "$HOME/.cargo/bin" ];
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [ yazi ];
 }

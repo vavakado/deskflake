@@ -38,6 +38,8 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  hardware.uinput.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
   users.users.vavakado = {
     isNormalUser = true;
     extraGroups = [
@@ -73,17 +75,11 @@
     flite # for narrator
     foot
     freetube
-    steamtinkerlaunch
-    xdotool
-    xorg.xrandr
-    xorg.xwininfo
-    xorg.xprop
-    yad
-    unzip
     fzf
     gamescope
     git
     git-extras
+    git-lfs
     github-cli
     glow
     gnumake
@@ -92,13 +88,12 @@
     grim
     hyprshade
     hyprutils
+    imagemagick
     imgbrd-grabber
     imv
     jellyfin-mpv-shim
     jq
     kdePackages.qt6ct
-    git-lfs
-    usbutils
     keepassxc
     lazydocker
     localsend
@@ -137,6 +132,7 @@
     sqlite
     sshfs
     starship
+    steamtinkerlaunch
     surrealdb
     surrealist
     swaybg
@@ -149,6 +145,8 @@
     tree
     tree-sitter
     udiskie
+    unzip
+    usbutils
     vesktop
     vim
     waybar
@@ -158,13 +156,26 @@
     winetricks
     wl-clipboard
     wofi
+    xdotool
+    xorg.xprop
+    xorg.xrandr
+    xorg.xwininfo
+    yad
     zig
     zoxide
   ];
 
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+    discovery = true;
+  };
   services.gvfs.enable = true;
   services.udisks2.enable = true;
-  services.samba.enable = true;
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts
