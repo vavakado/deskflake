@@ -7,8 +7,8 @@
   home.stateVersion = "24.11"; # don't change it bro
 
   gtk.enable = true;
-  gtk.cursorTheme.package = pkgs.bibata-cursors;
-  gtk.cursorTheme.name = "Bibata-Modern-Classic";
+  gtk.cursorTheme.package = pkgs.google-cursor;
+  gtk.cursorTheme.name = "GoogleDot-White";
   gtk.theme.package = pkgs.tokyonight-gtk-theme;
   gtk.theme.name = "Tokyonight-Dark";
   gtk.iconTheme.package = pkgs.adwaita-icon-theme;
