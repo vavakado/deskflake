@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "vavakado";
@@ -75,5 +76,14 @@
 
   #  home.sessionVariables = { EDITOR = "nvim"; };
   # home.sessionPath = [ "$HOME/.cargo/bin" ];
-  home.packages = with pkgs; [ yazi ];
+  home.packages = with pkgs; [
+    yazi
+    gdu
+    tor-browser
+    hugo
+    bc
+    irssi
+    profanity
+    emacs29-pgtk
+  ];
 }

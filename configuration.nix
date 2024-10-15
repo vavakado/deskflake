@@ -5,13 +5,17 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/bundle.nix
     inputs.spicetify-nix.nixosModules.default
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot.loader = {
     efi = {
@@ -108,7 +112,7 @@
     nemo-with-extensions
     neovide
     neovim
-    nixfmt
+    nixfmt-rfc-style
     nodejs
     nvtopPackages.nvidia
     nwg-look
@@ -165,6 +169,18 @@
     zoxide
   ];
 
+  programs.proxychains = {
+    enable = true;
+    package = pkgs.proxychains-ng;
+    proxies = {
+      tor = {
+        type = "socks5";
+        host = "127.0.0.1";
+        port = 9050;
+      };
+    };
+  };
+
   services.samba-wsdd = {
     enable = true;
     openFirewall = true;
@@ -175,6 +191,19 @@
   services.samba = {
     enable = true;
     openFirewall = true;
+  };
+
+  services.tor = {
+    enable = true;
+    # Enable Torsocks for transparent proxying of applications through Tor
+    torsocks = {
+      enable = true;
+      allowInbound = true;
+    };
+    client = {
+      enable = true;
+      dns.enable = true;
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -214,4 +243,3 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
-
