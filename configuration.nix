@@ -111,7 +111,6 @@
     nemo-fileroller
     nemo-with-extensions
     neovide
-    neovim
     nixfmt-rfc-style
     nodejs
     nvtopPackages.nvidia

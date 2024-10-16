@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs,lib, inputs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -22,22 +22,24 @@
     #      nix-direnv.enable = true;
     #    };
     #
-    #    neovim = {
-    #      enable = true;
-    #      extraWrapperArgs = [
-    #        "--suffix"
-    #        "LIBRARY_PATH"
-    #        ":"
-    #        "${lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.zlib ]}"
-    #        "--suffix"
-    #        "PKG_CONFIG_PATH"
-    #        ":"
-    #        "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [
-    #          pkgs.stdenv.cc.cc
-    #          pkgs.zlib
-    #        ]}"
-    #      ];
-    #    };
+     neovim = {
+       enable = true;
+    extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
+    extraPackages =[ pkgs.imagemagick ];
+       extraWrapperArgs = [
+         "--suffix"
+         "LIBRARY_PATH"
+         ":"
+         "${lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.zlib ]}"
+         "--suffix"
+         "PKG_CONFIG_PATH"
+         ":"
+         "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [
+           pkgs.stdenv.cc.cc
+           pkgs.zlib
+         ]}"
+       ];
+     };
 
     #    bash = {
     #      shellAliases = {
@@ -84,6 +86,8 @@
     bc
     irssi
     profanity
-    emacs29-pgtk
+    ueberzugpp
+    lua51Packages.lua
+    lua51Packages.luarocks
   ];
 }
