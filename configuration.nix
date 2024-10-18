@@ -11,6 +11,8 @@
     inputs.spicetify-nix.nixosModules.default
   ];
 
+  nix.package = pkgs.lix;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -60,11 +62,8 @@
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
-		nix-index
-    anki
     bat
     bottles
-    calibre
     chezmoi
     clang
     dust
@@ -112,6 +111,7 @@
     nemo-fileroller
     nemo-with-extensions
     neovide
+    nix-index
     nixfmt-rfc-style
     nodejs
     nvtopPackages.nvidia

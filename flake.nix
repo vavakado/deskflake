@@ -3,14 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    lix-module = {
-      url =
-        "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:Aylur/ags";
@@ -18,7 +14,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, lix-module, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
@@ -28,7 +24,7 @@
             inherit self system;
             inherit inputs;
           };
-          modules = [ ./configuration.nix lix-module.nixosModules.default ];
+          modules = [ ./configuration.nix ];
         };
       };
       homeConfigurations.vavakado = home-manager.lib.homeManagerConfiguration {

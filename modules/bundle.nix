@@ -8,6 +8,7 @@
     ./networking.nix
     ./nvidia.nix
     ./spicetify.nix
+    ./stable.nix
     ./sunshine.nix
     ./zen-browser.nix
   ];
