@@ -1,4 +1,3 @@
-# Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
@@ -61,6 +60,7 @@
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
+		nix-index
     anki
     bat
     bottles
@@ -77,7 +77,6 @@
     ffmpeg
     file-roller
     flite # for narrator
-    foot
     freetube
     fzf
     gamescope
@@ -97,8 +96,10 @@
     imv
     jellyfin-mpv-shim
     jq
+    kanata
     kdePackages.qt6ct
     keepassxc
+    kitty
     lazydocker
     localsend
     loupe

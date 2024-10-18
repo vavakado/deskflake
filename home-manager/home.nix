@@ -1,4 +1,9 @@
-{ pkgs,lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -22,24 +27,27 @@
     #      nix-direnv.enable = true;
     #    };
     #
-     neovim = {
-       enable = true;
-    extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
-    extraPackages =[ pkgs.imagemagick ];
-       extraWrapperArgs = [
-         "--suffix"
-         "LIBRARY_PATH"
-         ":"
-         "${lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.zlib ]}"
-         "--suffix"
-         "PKG_CONFIG_PATH"
-         ":"
-         "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [
-           pkgs.stdenv.cc.cc
-           pkgs.zlib
-         ]}"
-       ];
-     };
+    neovim = {
+      enable = true;
+      extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
+      extraPackages = [ pkgs.imagemagick ];
+      extraWrapperArgs = [
+        "--suffix"
+        "LIBRARY_PATH"
+        ":"
+        "${lib.makeLibraryPath [
+          pkgs.stdenv.cc.cc
+          pkgs.zlib
+        ]}"
+        "--suffix"
+        "PKG_CONFIG_PATH"
+        ":"
+        "${lib.makeSearchPathOutput "dev" "lib/pkgconfig" [
+          pkgs.stdenv.cc.cc
+          pkgs.zlib
+        ]}"
+      ];
+    };
 
     #    bash = {
     #      shellAliases = {
@@ -61,15 +69,25 @@
     #      enableBashIntegration = true;
     #    };
 
-    #ags = {
-    #  enable = true;
-
-    #  # null or path, leave as null if you don't want hm to manage the config
-    #  configDir = null;
-
-    #  # additional packages to add to gjs's runtime
-    #  extraPackages = with pkgs; [ ];
-    #};
+    # ags = {
+    #   enable = true;
+    #
+    #   # null or path, leave as null if you don't want hm to manage the config
+    #   configDir = null;
+    #
+    #   # additional packages to add to gjs's runtime
+    #   extraPackages = with pkgs; [ sass ];
+    # };
+    zathura = {
+      enable = true;
+      options = {
+        selection-clipboard = "clipboard";
+        default-bg = "#1a1b26";
+        default-fg = "#a9b1d6";
+        statusbar-fg = "#a9b1d6";
+        statusbar-bg = "#24283b";
+      };
+    };
 
     home-manager.enable = true;
   };
@@ -79,15 +97,18 @@
   #  home.sessionVariables = { EDITOR = "nvim"; };
   # home.sessionPath = [ "$HOME/.cargo/bin" ];
   home.packages = with pkgs; [
-    yazi
-    gdu
-    tor-browser
-    hugo
     bc
+    gdu
+    hugo
     irssi
-    profanity
-    ueberzugpp
+    libnotify
     lua51Packages.lua
     lua51Packages.luarocks
+    profanity
+    tor-browser
+    yazi
+
+    elixir
+    elixir-ls
   ];
 }
