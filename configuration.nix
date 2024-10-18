@@ -101,7 +101,6 @@
     kitty
     lazydocker
     localsend
-    loupe
     mako
     mako
     mangohud
@@ -121,6 +120,7 @@
     p7zip-rar
     pavucontrol
     pigz
+    pix
     prismlauncher
     protontricks
     protonup-qt
