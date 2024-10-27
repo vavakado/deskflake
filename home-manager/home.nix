@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }:
 {
@@ -98,6 +97,7 @@
   # home.sessionPath = [ "$HOME/.cargo/bin" ];
   home.packages = with pkgs; [
     bc
+    gallery-dl
     gdu
     hugo
     irssi
@@ -106,9 +106,15 @@
     lua51Packages.luarocks
     profanity
     tor-browser
+    wofi-emoji
     yazi
 
     elixir
     elixir-ls
+    postgresql
+    inotify-tools
+
+    runelite
+    hdos
   ];
 }

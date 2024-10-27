@@ -5,6 +5,7 @@
   virtualisation.docker = {
     enable = true;
     liveRestore = false;
+    enableNvidia = true;
   };
 }
 
