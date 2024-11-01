@@ -7,6 +7,7 @@
     ./lsp-servers.nix
     ./networking.nix
     ./nvidia.nix
+    ./postgres.nix
     ./spicetify.nix
     ./stable.nix
     ./sunshine.nix

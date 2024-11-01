@@ -105,16 +105,17 @@
     lua51Packages.lua
     lua51Packages.luarocks
     profanity
+    swww
+    tabby-agent
     tor-browser
+    vscode
     wofi-emoji
     yazi
 
     elixir
     elixir-ls
-    postgresql
     inotify-tools
-
-    runelite
-    hdos
+    lexical
+    postgresql
   ];
 }

@@ -72,7 +72,6 @@
     eza
     fastfetch
     fd
-    feh
     ffmpeg
     file-roller
     flite # for narrator
@@ -138,13 +137,8 @@
     sshfs
     starship
     steamtinkerlaunch
-    surrealdb
-    surrealist
-    swaybg
     tealdeer
-    teamspeak5_client
     telegram-desktop
-    thunderbird
     tmux
     tokei
     tree
@@ -165,8 +159,6 @@
     xorg.xprop
     xorg.xrandr
     xorg.xwininfo
-    yad
-    zig
     zoxide
   ];
 
