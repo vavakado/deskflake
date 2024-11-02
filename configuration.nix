@@ -44,6 +44,11 @@
     binfmt = true;
   };
 
+  programs.mosh = {
+    enable = true;
+    withUtempter = true;
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
@@ -211,6 +216,8 @@
     noto-fonts-emoji
     nerdfonts
     fira-code
+    fira-sans
+    roboto
     fira-code-symbols
   ];
 

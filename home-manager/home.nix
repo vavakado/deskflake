@@ -112,6 +112,9 @@
     wofi-emoji
     yazi
 
+    hypridle
+    hyprlock
+
     elixir
     elixir-ls
     inotify-tools
