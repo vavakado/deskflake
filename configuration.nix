@@ -102,7 +102,6 @@
     hyprutils
     imagemagick
     imgbrd-grabber
-    imv
     jellyfin-mpv-shim
     jq
     kanata
