@@ -69,11 +69,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (blender.override { cudaSupport = true; })
+    # (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=351902 to be merged into unstable
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
+    anki
     bat
     bottles
+    calibre
     chezmoi
     clang
     dust
@@ -102,7 +104,7 @@
     hyprutils
     imagemagick
     imgbrd-grabber
-    jellyfin-mpv-shim
+    # jellyfin-mpv-shim
     jq
     kanata
     kdePackages.qt6ct

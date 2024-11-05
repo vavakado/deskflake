@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
+{
   services.xserver = {
     xkb.extraLayouts.colemak-caps = {
       description = "Colemak layout wiht no caps remap";
@@ -15,8 +21,7 @@
       after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart =
-          "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+        ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;
@@ -25,6 +30,9 @@
   };
 
   programs.hyprland.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+  # TODO: wait for pr https://nixpk.gs/pr-tracker.html?pr=353338
+
+  services.displayManager.ly.enable = true;
 }
