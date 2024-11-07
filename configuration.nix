@@ -109,6 +109,7 @@
     kanata
     kdePackages.qt6ct
     keepassxc
+
     kitty
     lazydocker
     localsend
@@ -241,8 +242,8 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 61208 ];
+  networking.firewall.allowedUDPPorts = [ 61208 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

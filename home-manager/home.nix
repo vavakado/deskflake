@@ -11,13 +11,24 @@
 
   home.stateVersion = "24.11"; # don't change it bro
 
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt6;
+    };
+  };
+
   gtk.enable = true;
-  gtk.cursorTheme.package = pkgs.google-cursor;
-  gtk.cursorTheme.name = "GoogleDot-White";
-  gtk.theme.package = pkgs.tokyonight-gtk-theme;
-  gtk.theme.name = "Tokyonight-Dark";
-  gtk.iconTheme.package = pkgs.adwaita-icon-theme;
-  gtk.iconTheme.name = "Adwaita";
+  # gtk.cursorTheme.package = pkgs.google-cursor;
+  # gtk.cursorTheme.name = "GoogleDot-White";
+  gtk.cursorTheme.package = pkgs.apple-cursor;
+  gtk.cursorTheme.name = "macOS";
+  gtk.theme.package = pkgs.whitesur-gtk-theme;
+  gtk.theme.name = "WhiteSur-Dark";
+  gtk.iconTheme.package = pkgs.whitesur-icon-theme;
+  gtk.iconTheme.name = "WhiteSur";
 
   programs = {
     #    direnv = {
@@ -97,6 +108,8 @@
   # home.sessionPath = [ "$HOME/.cargo/bin" ];
   home.packages = with pkgs; [
     bc
+    obsidian
+    delta
     gallery-dl
     gdu
     hugo
@@ -104,13 +117,12 @@
     libnotify
     lua51Packages.lua
     lua51Packages.luarocks
-    profanity
     swww
-    tabby-agent
     tor-browser
     vscode
     wofi-emoji
-    yazi
+    glances
+    # yazi # TODO: wait for pr https://nixpk.gs/pr-tracker.html?pr=353272 to be merged
 
     hypridle
     hyprlock
