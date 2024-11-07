@@ -18,7 +18,7 @@
         fullScreen
         # beautifulLyrics
       ];
-      theme = spicePkgs.themes.text;
-      colorScheme = "TokyoNight";
+      theme = spicePkgs.themes.lucid;
+      colorScheme = "macos";
     };
 }
