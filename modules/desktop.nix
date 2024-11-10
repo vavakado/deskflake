@@ -28,9 +28,6 @@
   };
 
   programs.hyprland.enable = true;
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-  # TODO: wait for pr https://nixpk.gs/pr-tracker.html?pr=353338
 
   services.displayManager.ly.enable = true;
 }

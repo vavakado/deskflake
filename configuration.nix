@@ -55,6 +55,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   hardware.uinput.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
+  hardware.logitech.wireless.enable = true;
   users.users.vavakado = {
     isNormalUser = true;
     extraGroups = [
@@ -69,7 +70,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=351902 to be merged into unstable
+
+    # (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
     anki
@@ -86,6 +88,7 @@
     fd
     ffmpeg
     file-roller
+    firefoxpwa
     flite # for narrator
     freetube
     fzf
@@ -104,12 +107,10 @@
     hyprutils
     imagemagick
     imgbrd-grabber
-    # jellyfin-mpv-shim
     jq
     kanata
     kdePackages.qt6ct
     keepassxc
-
     kitty
     lazydocker
     localsend
@@ -118,7 +119,6 @@
     mangohud
     mold
     mpv
-    mpv-shim-default-shaders
     nemo-fileroller
     nemo-with-extensions
     neovide
@@ -173,6 +173,12 @@
     xorg.xwininfo
     zoxide
   ];
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+  };
 
   programs.proxychains = {
     enable = true;

@@ -3,6 +3,7 @@
     ./bluetooth.nix
     ./desktop.nix
     ./docker.nix
+    ./dualshock.nix
     ./libvirt.nix
     ./lsp-servers.nix
     ./networking.nix

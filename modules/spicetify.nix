@@ -16,7 +16,7 @@
         powerBar
         betterGenres
         fullScreen
-        # beautifulLyrics
+        beautifulLyrics
       ];
       theme = spicePkgs.themes.lucid;
       colorScheme = "macos";
