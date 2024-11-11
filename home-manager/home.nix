@@ -31,12 +31,12 @@
   gtk.iconTheme.name = "WhiteSur";
 
   programs = {
-    #    direnv = {
-    #      enable = true;
-    #      enableBashIntegration = true; # see note on other shells below
-    #      nix-direnv.enable = true;
-    #    };
-    #
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+
     neovim = {
       enable = true;
       extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
@@ -59,25 +59,44 @@
       ];
     };
 
-    #    bash = {
-    #      shellAliases = {
-    #        ".." = "cd ..";
-    #        v = "nvim";
-    #      };
-    #      enable = true; # see note on other shells below
-    #    };
-    #    zoxide = {
-    #      enable = true;
-    #      enableBashIntegration = true;
-    #    };
-    #    eza = {
-    #      enable = true;
-    #      icons = true;
-    #    };
-    #    starship = {
-    #      enable = true;
-    #      enableBashIntegration = true;
-    #    };
+    bash = {
+      shellAliases = {
+        ".." = "cd ..";
+        la = "eza --icons --all";
+        ll = "eza --icons --long";
+        ls = "eza --icons";
+        lw = "eza --icons --long --sort changed";
+        v = "nvim";
+      };
+      profileExtra = ''
+                calc() {
+                    echo "scale=4; $*" | bc -l
+                }
+        function y() {
+        	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        	yazi "$@" --cwd-file="$tmp"
+        	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        		builtin cd -- "$cwd"
+        	fi
+        	rm -f -- "$tmp"
+        }
+      '';
+      historySize = 100000;
+      historyFileSize = 300000;
+      enable = true; # see note on other shells below
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    eza = {
+      enable = true;
+      icons = "auto";
+    };
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+    };
 
     ags = {
       enable = true;
@@ -99,13 +118,22 @@
       };
     };
 
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
     home-manager.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;
 
   #  home.sessionVariables = { EDITOR = "nvim"; };
-  # home.sessionPath = [ "$HOME/.cargo/bin" ];
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+    "$HOME/.local/bin"
+    "$HOME/.config/emacs/bin"
+  ];
   home.packages = with pkgs; [
     bc
     obsidian
@@ -123,7 +151,9 @@
     wofi-emoji
     glances
     yazi
-		  bun
+    bun
+    python3
+    emacs29-pgtk
     # ags
 
     hypridle

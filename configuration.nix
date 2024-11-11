@@ -83,7 +83,6 @@
     dust
     dwarfs
     element-desktop
-    eza
     fastfetch
     fd
     ffmpeg
@@ -91,7 +90,6 @@
     firefoxpwa
     flite # for narrator
     freetube
-    fzf
     gamescope
     gimp
     git
@@ -147,7 +145,6 @@
     soundconverter
     sqlite
     sshfs
-    starship
     steamtinkerlaunch
     tealdeer
     telegram-desktop
