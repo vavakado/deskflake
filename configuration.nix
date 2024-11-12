@@ -13,6 +13,8 @@
 
   nix.package = pkgs.lix;
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -66,8 +68,9 @@
       "uinput"
       "input"
     ]; # Enable ‘sudo’ for the user.
-    packages = [ ];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
 

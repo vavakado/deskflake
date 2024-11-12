@@ -68,7 +68,7 @@
         lw = "eza --icons --long --sort changed";
         v = "nvim";
       };
-      profileExtra = ''
+      bashrcExtra = ''
                 calc() {
                     echo "scale=4; $*" | bc -l
                 }
@@ -85,9 +85,39 @@
       historyFileSize = 300000;
       enable = true; # see note on other shells below
     };
+    zsh = {
+      enable = true;
+      shellAliases = {
+        ".." = "cd ..";
+        la = "eza --icons --all";
+        ll = "eza --icons --long";
+        ls = "eza --icons";
+        lw = "eza --icons --long --sort changed";
+        v = "nvim";
+      };
+      autosuggestion = {
+        enable = true;
+        strategy = [
+          "match_prev_cmd"
+          "completion"
+          "history"
+        ];
+      };
+      syntaxHighlighting.enable = true;
+      dotDir = ".config/zsh";
+      history = {
+        save = 300000;
+        size = 100000;
+      };
+      initExtra = ''
+        any-nix-shell zsh | source /dev/stdin
+      '';
+    };
+
     zoxide = {
       enable = true;
       enableBashIntegration = true;
+      enableZshIntegration = true;
     };
     eza = {
       enable = true;
@@ -96,6 +126,7 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
+      enableZshIntegration = true;
     };
 
     ags = {
@@ -121,6 +152,7 @@
     fzf = {
       enable = true;
       enableBashIntegration = true;
+      enableZshIntegration = true;
     };
 
     home-manager.enable = true;
@@ -154,6 +186,7 @@
     bun
     python3
     emacs29-pgtk
+    any-nix-shell
     # ags
 
     hypridle
