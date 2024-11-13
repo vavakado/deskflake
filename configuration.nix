@@ -77,9 +77,9 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    spotify # TODO: remove because spicetify is not working for a bit
+    # spotify # TODO: remove because spicetify is not working for a bit
 
-    # (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
+    (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
     anki
