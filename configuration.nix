@@ -13,7 +13,11 @@
 
   nix.package = pkgs.lix;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  chaotic.scx = {
+    enable = true;
+    scheduler = "scx_rusty";
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -73,6 +77,7 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
+    spotify # TODO: remove because spicetify is not working for a bit
 
     # (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
     (btop.override { cudaSupport = true; })

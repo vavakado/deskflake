@@ -8,7 +8,7 @@
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [
         adblock
-        hidePodcasts
+        # hidePodcasts
         shuffle # shuffle+ (special characters are sanitized out of extension names)
         fullScreen
         # autoVolume

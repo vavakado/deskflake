@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     docker-compose-language-service
     dockerfile-language-server-nodejs
@@ -7,6 +8,7 @@
     nixd
     prettierd
     stylua
+    svelte-language-server
     tailwindcss
     typescript-language-server
     vscode-langservers-extracted

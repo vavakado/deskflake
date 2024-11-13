@@ -111,6 +111,17 @@
       };
       initExtra = ''
         any-nix-shell zsh | source /dev/stdin
+		bindkey "^[[1;5C" forward-word
+		bindkey "^[[1;5D" backward-word
+
+        function y() {
+        	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        	yazi "$@" --cwd-file="$tmp"
+        	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        		builtin cd -- "$cwd"
+        	fi
+        	rm -f -- "$tmp"
+        }
       '';
     };
 
@@ -179,6 +190,7 @@
     lua51Packages.luarocks
     swww
     tor-browser
+    chromium
     vscode
     wofi-emoji
     glances
@@ -187,6 +199,7 @@
     python3
     emacs29-pgtk
     any-nix-shell
+    conda
     # ags
 
     hypridle
