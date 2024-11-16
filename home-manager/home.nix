@@ -110,18 +110,18 @@
         size = 100000;
       };
       initExtra = ''
-        any-nix-shell zsh | source /dev/stdin
-		bindkey "^[[1;5C" forward-word
-		bindkey "^[[1;5D" backward-word
+                any-nix-shell zsh | source /dev/stdin
+        		bindkey "^[[1;5C" forward-word
+        		bindkey "^[[1;5D" backward-word
 
-        function y() {
-        	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        	yazi "$@" --cwd-file="$tmp"
-        	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        		builtin cd -- "$cwd"
-        	fi
-        	rm -f -- "$tmp"
-        }
+                function y() {
+                	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+                	yazi "$@" --cwd-file="$tmp"
+                	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+                		builtin cd -- "$cwd"
+                	fi
+                	rm -f -- "$tmp"
+                }
       '';
     };
 
@@ -160,6 +160,15 @@
       };
     };
 
+    # emacs = {
+    #   enable = true;
+    #   package = pkgs.emacs29-pgtk;
+    #   extraPackages =
+    #     epkgs: with epkgs; [
+    #       vterm
+    #     ];
+    # };
+
     fzf = {
       enable = true;
       enableBashIntegration = true;
@@ -171,12 +180,15 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  #  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
   home.sessionPath = [
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
     "$HOME/.config/emacs/bin"
   ];
+
   home.packages = with pkgs; [
     bc
     obsidian
@@ -197,10 +209,14 @@
     yazi
     bun
     python3
-    emacs29-pgtk
+    # emacs29-pgtk
     any-nix-shell
     conda
-    # ags
+    cmake
+    libtool
+    tmuxinator
+    inkscape
+    gimp
 
     hypridle
     hyprlock

@@ -55,10 +55,11 @@
     withUtempter = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   hardware.uinput.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
   hardware.logitech.wireless.enable = true;
@@ -77,8 +78,6 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # spotify # TODO: remove because spicetify is not working for a bit
-
     (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
     (btop.override { cudaSupport = true; })
     adwaita-icon-theme
@@ -99,7 +98,6 @@
     flite # for narrator
     freetube
     gamescope
-    gimp
     git
     git-extras
     git-lfs
