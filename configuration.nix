@@ -14,6 +14,7 @@
   nix.package = pkgs.lix;
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.tmp.cleanOnBoot = true;
   chaotic.scx = {
     enable = true;
     scheduler = "scx_rusty";
@@ -29,10 +30,13 @@
       canTouchEfiVariables = true;
       efiSysMountPoint = "/efi";
     };
-    grub = {
-      efiSupport = true;
-      device = "nodev";
+    systemd-boot = {
+      enable = true;
     };
+    # grub = {
+    #   efiSupport = true;
+    #   device = "nodev";
+    # };
   };
 
   networking.hostName = "uwuw"; # Define your hostname.
@@ -84,7 +88,7 @@
     anki
     bat
     bottles
-    calibre
+    # calibre
     chezmoi
     clang
     dust
@@ -125,7 +129,7 @@
     mpv
     nemo-fileroller
     nemo-with-extensions
-    neovide
+    # neovide # TODO: wait for pr #356292
     nix-index
     nixfmt-rfc-style
     nodejs
@@ -162,6 +166,7 @@
     unzip
     usbutils
     vesktop
+    legcord
     vim
     waybar
     wget

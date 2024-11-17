@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -147,7 +148,14 @@
       configDir = null;
 
       # additional packages to add to gjs's runtime
-      extraPackages = with pkgs; [ sass ];
+      extraPackages = [
+        pkgs.sass
+        inputs.ags.packages."x86_64-linux".hyprland
+        inputs.ags.packages."x86_64-linux".mpris
+        inputs.ags.packages."x86_64-linux".wireplumber
+        inputs.ags.packages."x86_64-linux".tray
+        inputs.ags.packages."x86_64-linux".network
+      ];
     };
     zathura = {
       enable = true;
@@ -217,6 +225,8 @@
     tmuxinator
     inkscape
     gimp
+    xdelta
+    gjs
 
     hypridle
     hyprlock

@@ -19,6 +19,7 @@
     {
       self,
       nixpkgs,
+      ags,
       home-manager,
       chaotic,
       ...
@@ -42,6 +43,9 @@
       };
       homeConfigurations.vavakado = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./home-manager/home.nix
           inputs.ags.homeManagerModules.default
