@@ -13,12 +13,13 @@
 
   nix.package = pkgs.lix;
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.tmp.cleanOnBoot = true;
-  chaotic.scx = {
-    enable = true;
-    scheduler = "scx_rusty";
-  };
+  # chaotic.scx = {
+  #   enable = true;
+  #   scheduler = "scx_rusty";
+  # };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -84,11 +85,10 @@
   environment.systemPackages = with pkgs; [
     (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
     (btop.override { cudaSupport = true; })
-    adwaita-icon-theme
+
     anki
     bat
     bottles
-    # calibre
     chezmoi
     clang
     dust
@@ -121,6 +121,7 @@
     keepassxc
     kitty
     lazydocker
+    legcord
     localsend
     mako
     mako
@@ -129,7 +130,6 @@
     mpv
     nemo-fileroller
     nemo-with-extensions
-    # neovide # TODO: wait for pr #356292
     nix-index
     nixfmt-rfc-style
     nodejs
@@ -166,7 +166,6 @@
     unzip
     usbutils
     vesktop
-    legcord
     vim
     waybar
     wget

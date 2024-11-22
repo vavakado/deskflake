@@ -31,4 +31,29 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.displayManager.ly.enable = true;
+
+  programs.wayfire = {
+    enable = true;
+    plugins = with pkgs.wayfirePlugins; [
+      wcm
+      wf-shell
+      wayfire-plugins-extra
+    ];
+  };
+
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.gdm.enable = true;
+  #   desktopManager.gnome.enable = true;
+  # };
+  #
+  # environment.systemPackages = with pkgs; [
+  #   gnome.gnome-tweaks
+  #   gnomeExtensions.appindicator
+  #   gnomeExtensions.dash-to-dock
+  #   gnomeExtensions.blur-my-shell
+  #   gnomeExtensions.search-light
+  # ];
+  #
+  # services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
 }

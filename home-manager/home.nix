@@ -198,35 +198,36 @@
   ];
 
   home.packages = with pkgs; [
+    any-nix-shell
     bc
-    obsidian
+    bun
+    chromium
+    cliphist
+    cmake
+    conda
     delta
     gallery-dl
     gdu
+    gimp
+    gjs
+    glances
     hugo
+    inkscape
     irssi
     libnotify
+    libtool
     lua51Packages.lua
     lua51Packages.luarocks
+    neovide
+    obsidian
+    python3
     swww
+    tmuxinator
     tor-browser
-    chromium
     vscode
     wofi-emoji
-    glances
-    yazi
-    bun
-    python3
-    # emacs29-pgtk
-    any-nix-shell
-    conda
-    cmake
-    libtool
-    tmuxinator
-    inkscape
-    gimp
     xdelta
-    gjs
+    yazi
 
     hypridle
     hyprlock

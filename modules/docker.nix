@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = [ pkgs.docker-compose ];
 
   hardware.nvidia-container-toolkit.enable = true;
@@ -8,4 +9,3 @@
     enableNvidia = true;
   };
 }
-
