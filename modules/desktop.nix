@@ -30,16 +30,27 @@
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  services.displayManager.ly.enable = true;
-
-  programs.wayfire = {
+  services.displayManager.sddm = {
     enable = true;
-    plugins = with pkgs.wayfirePlugins; [
-      wcm
-      wf-shell
-      wayfire-plugins-extra
+    wayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
     ];
   };
+
+  # programs.wayfire = {
+  #   enable = true;
+  #   plugins = with pkgs.wayfirePlugins; [
+  #     wcm
+  #     wf-shell
+  #     wayfire-plugins-extra
+  #   ];
+  # };
 
   # services.xserver = {
   #   enable = true;
