@@ -9,7 +9,6 @@
     prettierd
     stylua
     svelte-language-server
-    tailwindcss
     typescript-language-server
     vscode-langservers-extracted
   ];

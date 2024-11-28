@@ -13,8 +13,10 @@
 
   nix.package = pkgs.lix;
 
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.kernelPackages = pkgs.linuxPackages_6_1;
+  programs.nix-ld.enable = true;
+
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.tmp.cleanOnBoot = true;
   # chaotic.scx = {
   #   enable = true;
@@ -83,7 +85,7 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    (blender.override { cudaSupport = true; }) # TODO: wait for https://nixpk.gs/pr-tracker.html?pr=354095 to be merged into unstable
+    (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
 
     anki
@@ -91,12 +93,13 @@
     bottles
     chezmoi
     clang
+    distrobox
     dust
     dwarfs
     element-desktop
     fastfetch
     fd
-    ffmpeg
+    ffmpeg-full
     file-roller
     firefoxpwa
     flite # for narrator
@@ -121,9 +124,7 @@
     keepassxc
     kitty
     lazydocker
-    legcord
     localsend
-    mako
     mako
     mangohud
     mold
@@ -242,7 +243,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d";
-    flake = "/home/vavakado/deskflake/";
+    flake = "/home/vavakado/Config/deskflake/";
   };
 
   nixpkgs.config.allowUnfree = true;

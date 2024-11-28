@@ -155,6 +155,7 @@
         inputs.ags.packages."x86_64-linux".wireplumber
         inputs.ags.packages."x86_64-linux".tray
         inputs.ags.packages."x86_64-linux".network
+        inputs.ags.packages."x86_64-linux".apps
       ];
     };
     zathura = {
@@ -193,6 +194,7 @@
   };
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    "$HOME/go/bin/"
     "$HOME/.local/bin"
     "$HOME/.config/emacs/bin"
   ];
@@ -235,7 +237,11 @@
     elixir
     elixir-ls
     inotify-tools
+    tailwindcss-language-server
     lexical
     postgresql
+
+    godot_4
+    gdtoolkit_4
   ];
 }

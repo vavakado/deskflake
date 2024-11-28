@@ -35,6 +35,18 @@
     wayland.enable = true;
   };
 
+  # services.displayManager.ly.enable = true;
+
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
+  #     };
+  #   };
+  # };
+  # programs.regreet.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
