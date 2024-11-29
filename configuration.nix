@@ -64,7 +64,6 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
   };
 
   hardware.uinput.enable = true;
@@ -87,6 +86,8 @@
   environment.systemPackages = with pkgs; [
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
+
+    lutris
 
     anki
     bat

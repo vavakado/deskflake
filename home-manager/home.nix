@@ -240,6 +240,7 @@
     tailwindcss-language-server
     lexical
     postgresql
+    nodePackages.browser-sync
 
     godot_4
     gdtoolkit_4
