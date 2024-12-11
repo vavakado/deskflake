@@ -84,7 +84,7 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    (blender.override { cudaSupport = true; })
+    # (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
 
     lutris
@@ -226,17 +226,19 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-emoji
-    nerdfonts
-    fira-code
-    fira-sans
-    roboto
-    fira-code-symbols
-  ];
+  fonts.packages =
+    with pkgs;
+    [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji
+      fira-code
+      fira-sans
+      roboto
+      fira-code-symbols
+    ]
+    ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)); # super weird nix fuckery
 
   programs.steam.enable = true;
 

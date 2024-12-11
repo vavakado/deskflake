@@ -230,6 +230,7 @@
     wofi-emoji
     xdelta
     yazi
+    zsync
 
     hypridle
     hyprlock
@@ -241,6 +242,9 @@
     lexical
     postgresql
     nodePackages.browser-sync
+    difftastic
+    kdePackages.lokalize
+    gtranslator
 
     godot_4
     gdtoolkit_4
