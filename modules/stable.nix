@@ -4,7 +4,7 @@
   environment.systemPackages = with inputs.nixpkgs-stable.legacyPackages."${system}"; [
     calibre
     # anki
-    blender
+    # blender
     jellyfin-mpv-shim
     mpv-shim-default-shaders
     poedit

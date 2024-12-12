@@ -84,7 +84,7 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # (blender.override { cudaSupport = true; })
+    (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
 
     lutris
