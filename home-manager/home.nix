@@ -230,7 +230,6 @@
     wofi-emoji
     xdelta
     yazi
-    zsync
 
     hypridle
     hyprlock

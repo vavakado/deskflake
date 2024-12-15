@@ -87,8 +87,6 @@
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
 
-    lutris
-
     anki
     bat
     bottles
