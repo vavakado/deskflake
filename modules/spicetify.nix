@@ -7,18 +7,17 @@
     {
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [
-        adblock
-        # hidePodcasts
-        shuffle # shuffle+ (special characters are sanitized out of extension names)
-        fullScreen
+        # adblock
         # autoVolume
-        copyToClipboard
-        powerBar
-        betterGenres
-        fullScreen
+        # copyToClipboard
+        # fullScreen
+        # hidePodcasts
+        # powerBar
+        # shuffle # shuffle+ (special characters are sanitized out of extension names)
         beautifulLyrics
+        betterGenres
       ];
-      theme = spicePkgs.themes.lucid;
-      colorScheme = "macos";
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "Hikari";
     };
 }
