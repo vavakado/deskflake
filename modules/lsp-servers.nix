@@ -1,9 +1,13 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    arduino-cli
+    arduino-language-server
+    clang-tools
     docker-compose-language-service
     dockerfile-language-server-nodejs
     gopls
+    lldb
     marksman
     nixd
     prettierd
@@ -11,6 +15,5 @@
     svelte-language-server
     typescript-language-server
     vscode-langservers-extracted
-    lldb
   ];
 }

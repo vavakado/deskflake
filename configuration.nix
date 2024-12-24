@@ -77,6 +77,7 @@
       "libvirtd"
       "kvm"
       "uinput"
+      "dialout"
       "input"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
@@ -86,6 +87,11 @@
   environment.systemPackages = with pkgs; [
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
+
+    xivlauncher
+
+    arduino-ide
+    # arduino
 
     anki
     bat
@@ -167,11 +173,12 @@
     usbutils
     vesktop
     vim
-    waybar
     wget
     wine
     wine64
     winetricks
+    kdenlive
+    davinci-resolve
     wl-clipboard
     wofi
     xdotool
