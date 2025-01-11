@@ -237,6 +237,7 @@ in
     gjs
     glances
     gocryptfs
+    graphviz
     hugo
     inkscape
     irssi
@@ -257,7 +258,6 @@ in
     yazi
     zk
     zola
-    graphviz
 
     hypridle
     hyprlock

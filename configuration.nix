@@ -18,21 +18,17 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.tmp.cleanOnBoot = true;
-  # chaotic.scx = {
-  #   enable = true;
-  #   scheduler = "scx_rusty";
-  # };
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-services.locate = {
-                enable = true;
-                package = pkgs.plocate;
-interval = "hourly";
-};
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+    interval = "hourly";
+  };
 
   boot.loader = {
     efi = {
@@ -184,8 +180,6 @@ interval = "hourly";
     wine
     wine64
     winetricks
-    kdenlive
-    davinci-resolve
     wl-clipboard
     wofi
     xdotool
@@ -271,10 +265,10 @@ interval = "hourly";
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 61208 ];
-  networking.firewall.allowedUDPPorts = [ 61208 ];
+  # networking.firewall.allowedTCPPorts = [ 61208 ];
+  # networking.firewall.allowedUDPPorts = [ 61208 ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # DON'T FUCKING CHANGE THIS
   system.stateVersion = "24.11"; # Did you read the comment?

@@ -9,7 +9,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     ags.url = "github:Aylur/ags";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +25,6 @@
       nixpkgs,
       ags,
       home-manager,
-      chaotic,
       ...
     }@inputs:
     let
@@ -42,7 +40,6 @@
           };
           modules = [
             ./configuration.nix
-            chaotic.nixosModules.default
           ];
         };
       };
