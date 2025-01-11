@@ -28,6 +28,12 @@
     "flakes"
   ];
 
+services.locate = {
+                enable = true;
+                package = pkgs.plocate;
+interval = "hourly";
+};
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -95,6 +101,7 @@
 
     anki
     bat
+    plocate
     bottles
     chezmoi
     clang

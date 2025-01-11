@@ -4,6 +4,21 @@
   inputs,
   ...
 }:
+let
+  # TODO: remove this shit
+  tailwindcss-language-serverOverride = pkgs.tailwindcss-language-server.overrideAttrs (prev: {
+    installPhase = ''
+      runHook preInstall
+
+      mkdir -p $out/{bin,lib/tailwindcss-language-server}
+      cp -r {packages,node_modules} $out/lib/tailwindcss-language-server
+      chmod +x $out/lib/tailwindcss-language-server/packages/tailwindcss-language-server/bin/tailwindcss-language-server
+      ln -s $out/lib/tailwindcss-language-server/packages/tailwindcss-language-server/bin/tailwindcss-language-server $out/bin/tailwindcss-language-server
+
+      runHook postInstall
+    '';
+  });
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -111,18 +126,23 @@
         size = 100000;
       };
       initExtra = ''
-                any-nix-shell zsh | source /dev/stdin
-        		bindkey "^[[1;5C" forward-word
-        		bindkey "^[[1;5D" backward-word
+        any-nix-shell zsh | source /dev/stdin
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
 
-                function y() {
-                	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-                	yazi "$@" --cwd-file="$tmp"
-                	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                		builtin cd -- "$cwd"
-                	fi
-                	rm -f -- "$tmp"
-                }
+        function y() {
+        	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        	yazi "$@" --cwd-file="$tmp"
+        	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        		builtin cd -- "$cwd"
+        	fi
+        	rm -f -- "$tmp"
+        }
+
+
+        open() {
+        	("$@" &)
+        }
       '';
     };
 
@@ -200,6 +220,7 @@
   ];
 
   home.packages = with pkgs; [
+    (fortune.override { withOffensive = true; })
     any-nix-shell
     bc
     bun
@@ -207,16 +228,20 @@
     cliphist
     cmake
     conda
+    darktable
     delta
+    digikam
     gallery-dl
     gdu
     gimp
     gjs
     glances
+    gocryptfs
     hugo
     inkscape
     irssi
     libnotify
+    libreoffice
     libtool
     lua51Packages.lua
     lua51Packages.luarocks
@@ -231,6 +256,8 @@
     xdelta
     yazi
     zk
+    zola
+    graphviz
 
     hypridle
     hyprlock
@@ -238,7 +265,7 @@
     elixir
     elixir-ls
     inotify-tools
-    tailwindcss-language-server
+    tailwindcss-language-serverOverride
     lexical
     postgresql
     nodePackages.browser-sync
@@ -247,5 +274,14 @@
 
     godot_4
     gdtoolkit_4
+
+    jetbrains.datagrip
+
+    # WEIRD SHIT
+    sbcl
+    clisp
+    ((emacsPackagesFor emacs29-pgtk).emacsWithPackages (epkgs: [
+      epkgs.vterm
+    ]))
   ];
 }

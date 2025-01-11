@@ -15,5 +15,13 @@
     svelte-language-server
     typescript-language-server
     vscode-langservers-extracted
+    sqlfluff
+
+    # python
+    mypy
+    isort
+    black
+    pylint
+    python312Packages.python-lsp-server
   ];
 }

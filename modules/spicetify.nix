@@ -13,11 +13,11 @@
         # fullScreen
         # hidePodcasts
         # powerBar
-        # shuffle # shuffle+ (special characters are sanitized out of extension names)
-        beautifulLyrics
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
+        # beautifulLyrics
         betterGenres
       ];
       theme = spicePkgs.themes.comfy;
-      colorScheme = "Hikari";
+      colorScheme = "catppuccin-mocha";
     };
 }
