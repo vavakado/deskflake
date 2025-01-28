@@ -6,6 +6,7 @@
     ./dualshock.nix
     ./libvirt.nix
     ./lsp-servers.nix
+    ./menucalc.nix
     ./networking.nix
     ./nvidia.nix
     ./postgres.nix

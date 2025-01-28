@@ -238,7 +238,6 @@ in
     glances
     gocryptfs
     graphviz
-    hugo
     inkscape
     irssi
     libnotify
@@ -254,10 +253,9 @@ in
     tor-browser
     vscode
     wofi-emoji
-    xdelta
     yazi
     zk
-    zola
+    cool-retro-term
 
     hypridle
     hyprlock

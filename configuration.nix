@@ -118,6 +118,7 @@
     git-lfs
     github-cli
     glow
+    playerctl
     gnumake
     go
     godot_4
@@ -138,6 +139,7 @@
     mold
     mpv
     nemo-fileroller
+    rawtherapee
     nemo-with-extensions
     nix-index
     nixfmt-rfc-style
@@ -183,10 +185,17 @@
     wl-clipboard
     wofi
     xdotool
+    vial
+    via
     xorg.xprop
     xorg.xrandr
     xorg.xwininfo
     zoxide
+  ];
+
+  services.udev.packages = with pkgs; [
+    vial
+    via
   ];
 
   programs.firefox = {
