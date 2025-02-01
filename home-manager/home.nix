@@ -256,6 +256,7 @@ in
     yazi
     zk
     cool-retro-term
+    tk
 
     hypridle
     hyprlock
