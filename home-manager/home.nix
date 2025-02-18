@@ -243,7 +243,9 @@ in
     libnotify
     libreoffice
     libtool
+    ab-av1
     lua51Packages.lua
+    finamp
     lua51Packages.luarocks
     neovide
     obsidian
@@ -257,6 +259,9 @@ in
     zk
     cool-retro-term
     tk
+    hugin
+    enblend-enfuse
+    parallel
 
     hypridle
     hyprlock

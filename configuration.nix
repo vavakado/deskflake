@@ -14,6 +14,14 @@
   nix.package = pkgs.lix;
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    avahi
+    xcbuild
+    libadwaita
+    harfbuzz
+    libplist
+    libimobiledevice
+  ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = pkgs.linuxPackages_6_1;
@@ -86,6 +94,14 @@
   };
   programs.zsh.enable = true;
 
+  environment.variables = rec {
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+  };
+  programs.dconf.enable = true;
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
   environment.systemPackages = with pkgs; [
     (blender.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
@@ -94,7 +110,7 @@
 
     arduino-ide
     # arduino
-
+    adwaita-icon-theme
     anki
     bat
     plocate
@@ -124,6 +140,8 @@
     godot_4
     grim
     hyprshade
+    ifuse
+    libimobiledevice
     hyprutils
     imagemagick
     imgbrd-grabber
@@ -238,6 +256,17 @@
     client = {
       enable = true;
       dns.enable = true;
+    };
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+      ];
     };
   };
 
