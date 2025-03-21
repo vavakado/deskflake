@@ -20,6 +20,9 @@
     libadwaita
     harfbuzz
     libplist
+    portaudio
+    kdePackages.qtbase
+    lzo
     libimobiledevice
   ];
 
@@ -109,6 +112,8 @@
     xivlauncher
 
     arduino-ide
+    davinci-resolve
+    heroic
     # arduino
     adwaita-icon-theme
     anki
@@ -137,7 +142,6 @@
     playerctl
     gnumake
     go
-    godot_4
     grim
     hyprshade
     ifuse
@@ -281,6 +285,7 @@
       fira-sans
       roboto
       fira-code-symbols
+      corefonts
     ]
     ++ (builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)); # super weird nix fuckery
 

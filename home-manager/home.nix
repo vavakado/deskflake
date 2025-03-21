@@ -243,6 +243,8 @@ in
     libnotify
     libreoffice
     libtool
+    lftp
+    graphviz
     ab-av1
     lua51Packages.lua
     finamp
