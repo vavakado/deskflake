@@ -286,8 +286,24 @@ in
     # WEIRD SHIT
     sbcl
     clisp
-    ((emacsPackagesFor emacs29-pgtk).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs30-pgtk).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
+
+    #scala
+    # scala
+    # sbt
+    # scala-cli
+    # metals
+    # openjdk21
+    # ammonite
+    # scalafmt
+
+    #haskell
+    ghc
+    haskell-language-server
+    stack
+    cabal-install
+
   ];
 }
