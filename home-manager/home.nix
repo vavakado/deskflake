@@ -4,21 +4,6 @@
   inputs,
   ...
 }:
-let
-  # TODO: remove this shit
-  tailwindcss-language-serverOverride = pkgs.tailwindcss-language-server.overrideAttrs (prev: {
-    installPhase = ''
-      runHook preInstall
-
-      mkdir -p $out/{bin,lib/tailwindcss-language-server}
-      cp -r {packages,node_modules} $out/lib/tailwindcss-language-server
-      chmod +x $out/lib/tailwindcss-language-server/packages/tailwindcss-language-server/bin/tailwindcss-language-server
-      ln -s $out/lib/tailwindcss-language-server/packages/tailwindcss-language-server/bin/tailwindcss-language-server $out/bin/tailwindcss-language-server
-
-      runHook postInstall
-    '';
-  });
-in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -271,7 +256,7 @@ in
     elixir
     elixir-ls
     inotify-tools
-    tailwindcss-language-serverOverride
+    tailwindcss-language-server
     lexical
     postgresql
     nodePackages.browser-sync
