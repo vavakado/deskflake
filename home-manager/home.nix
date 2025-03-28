@@ -262,6 +262,7 @@
     nodePackages.browser-sync
     difftastic
     gtranslator
+    nixpkgs-review
 
     godot_4
     gdtoolkit_4

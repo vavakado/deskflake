@@ -110,13 +110,15 @@
     package = pkgs.usbmuxd2;
   };
   environment.systemPackages = with pkgs; [
-    (blender.override { cudaSupport = true; })
+    # (blender.override {
+    #   cudaSupport = true;
+    # })
+    blender
     (btop.override { cudaSupport = true; })
 
     xivlauncher
 
     arduino-ide
-    davinci-resolve
     heroic
     # arduino
     adwaita-icon-theme
@@ -133,7 +135,7 @@
     fastfetch
     fd
     openssl
-    ffmpeg-full
+    ffmpeg
     file-roller
     firefoxpwa
     flite # for narrator
