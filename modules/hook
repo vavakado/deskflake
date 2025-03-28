@@ -14,8 +14,6 @@ prepare_begin_start() {
     systemctl stop display-manager.service
 	systemctl stop ollama.service
 
-	pkill .Hyprland
-
     systemctl set-property --runtime -- user.slice AllowedCPUs=0,6
     systemctl set-property --runtime -- system.slice AllowedCPUs=0,6
     systemctl set-property --runtime -- init.scope AllowedCPUs=0,6

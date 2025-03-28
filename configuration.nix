@@ -13,6 +13,10 @@
 
   nix.package = pkgs.lix;
 
+  # boot.kernelParams = [
+  #   "nvidia.NVreg_EnableGpuFirmware=0"
+  # ];
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     avahi
@@ -97,7 +101,7 @@
   };
   programs.zsh.enable = true;
 
-  environment.variables = rec {
+  environment.variables = {
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
   programs.dconf.enable = true;
@@ -128,6 +132,7 @@
     element-desktop
     fastfetch
     fd
+    openssl
     ffmpeg-full
     file-roller
     firefoxpwa
