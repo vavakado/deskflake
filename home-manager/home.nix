@@ -241,6 +241,8 @@
     tmuxinator
     tor-browser
     vscode
+    feishin
+    filezilla
     wofi-emoji
     yazi
     zk

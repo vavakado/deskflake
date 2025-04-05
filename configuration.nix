@@ -116,15 +116,10 @@
     blender
     (btop.override { cudaSupport = true; })
 
-    xivlauncher
-
-    arduino-ide
-    heroic
-    # arduino
     adwaita-icon-theme
     anki
+    arduino-ide
     bat
-    plocate
     bottles
     chezmoi
     clang
@@ -134,7 +129,6 @@
     element-desktop
     fastfetch
     fd
-    openssl
     ffmpeg
     file-roller
     firefoxpwa
@@ -146,14 +140,13 @@
     git-lfs
     github-cli
     glow
-    playerctl
     gnumake
     go
     grim
+    heroic
     hyprshade
-    ifuse
-    libimobiledevice
     hyprutils
+    ifuse
     imagemagick
     imgbrd-grabber
     jq
@@ -162,13 +155,13 @@
     keepassxc
     kitty
     lazydocker
+    libimobiledevice
     localsend
     mako
     mangohud
     mold
     mpv
     nemo-fileroller
-    rawtherapee
     nemo-with-extensions
     nix-index
     nixfmt-rfc-style
@@ -177,15 +170,20 @@
     nwg-look
     obs-studio
     onefetch
+    openssl
     p7zip-rar
     pavucontrol
+    picard
     pigz
     pix
+    playerctl
+    plocate
     prismlauncher
     protontricks
     protonup-qt
     pv
     qt6.qtwayland
+    rawtherapee
     revolt-desktop
     ripgrep
     rsync
@@ -206,6 +204,8 @@
     unzip
     usbutils
     vesktop
+    via
+    vial
     vim
     wget
     wine
@@ -214,8 +214,6 @@
     wl-clipboard
     wofi
     xdotool
-    vial
-    via
     xorg.xprop
     xorg.xrandr
     xorg.xwininfo
