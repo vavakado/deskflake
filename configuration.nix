@@ -218,6 +218,8 @@
     xorg.xrandr
     xorg.xwininfo
     zoxide
+
+    godot-mono
   ];
 
   services.udev.packages = with pkgs; [
