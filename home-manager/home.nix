@@ -251,6 +251,7 @@
     hugin
     enblend-enfuse
     parallel
+    yt-dlp
 
     hypridle
     hyprlock
