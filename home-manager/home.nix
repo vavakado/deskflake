@@ -22,10 +22,10 @@
   };
 
   gtk.enable = true;
-  # gtk.cursorTheme.package = pkgs.google-cursor;
-  # gtk.cursorTheme.name = "GoogleDot-White";
-  gtk.cursorTheme.package = pkgs.apple-cursor;
-  gtk.cursorTheme.name = "macOS";
+  gtk.cursorTheme.package = pkgs.google-cursor;
+  gtk.cursorTheme.name = "GoogleDot-White";
+  # gtk.cursorTheme.package = pkgs.apple-cursor;
+  # gtk.cursorTheme.name = "macOS";
   gtk.theme.package = pkgs.whitesur-gtk-theme;
   gtk.theme.name = "WhiteSur-Dark";
   gtk.iconTheme.package = pkgs.whitesur-icon-theme;
@@ -252,6 +252,12 @@
     enblend-enfuse
     parallel
     yt-dlp
+    pnpm
+    davinci-resolve
+    lazysql
+    krita
+    newsflash
+    harper
 
     hypridle
     hyprlock
@@ -266,6 +272,7 @@
     difftastic
     gtranslator
     nixpkgs-review
+    upx
 
     # godot_4
     gdtoolkit_4
@@ -278,21 +285,6 @@
     ((emacsPackagesFor emacs30-pgtk).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
-
-    #scala
-    # scala
-    # sbt
-    # scala-cli
-    # metals
-    # openjdk21
-    # ammonite
-    # scalafmt
-
-    #haskell
-    ghc
-    haskell-language-server
-    stack
-    cabal-install
 
   ];
 }

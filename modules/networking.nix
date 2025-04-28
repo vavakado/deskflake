@@ -12,11 +12,6 @@
   };
 
   services.zerotierone.enable = true;
-  networking.networkmanager.enable = false;
+  networking.networkmanager.enable = true;
   services.openssh.enable = true;
-  services.resolved = {
-    enable = true;
-  };
-  networking.useDHCP = true;
-  networking.dhcpcd.enable = true;
 }

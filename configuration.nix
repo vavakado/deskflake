@@ -21,7 +21,17 @@
   programs.nix-ld.libraries = with pkgs; [
     avahi
     xcbuild
+    icu
     libadwaita
+
+    xorg.libX11
+    libjack2
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXi
+    xorg.libxcb
+    libxkbcommon
+    libGL
     harfbuzz
     libplist
     portaudio
@@ -44,6 +54,8 @@
     package = pkgs.plocate;
     interval = "hourly";
   };
+  services.flatpak.enable = true;
+  # services.xserver.digimend.enable = true;
 
   boot.loader = {
     efi = {
@@ -59,6 +71,17 @@
     # };
   };
 
+  programs.obs-studio = {
+    enable = false;
+    plugins = with pkgs.obs-studio-plugins; [
+      # (obs-backgroundremoval.override {
+      #   cudaSupport = false;
+      #   cudannSupport = false;
+      # })
+      obs-backgroundremoval
+    ];
+  };
+
   networking.hostName = "uwuw"; # Define your hostname.
 
   # Set your time zone.
@@ -67,6 +90,7 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   programs.appimage = {
@@ -115,8 +139,12 @@
     # })
     blender
     (btop.override { cudaSupport = true; })
-
+    bemenu
+    tofi
+    hyprpaper
+    hyprsunset
     adwaita-icon-theme
+    socat
     anki
     arduino-ide
     bat
@@ -168,7 +196,6 @@
     nodejs
     nvtopPackages.nvidia
     nwg-look
-    obs-studio
     onefetch
     openssl
     p7zip-rar
@@ -270,16 +297,16 @@
     };
   };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5 = {
-      waylandFrontend = true;
-      addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk
-      ];
-    };
-  };
+  # i18n.inputMethod = {
+  #   enabled = "fcitx5";
+  #   fcitx5 = {
+  #     waylandFrontend = true;
+  #     addons = with pkgs; [
+  #       fcitx5-mozc
+  #       fcitx5-gtk
+  #     ];
+  #   };
+  # };
 
   fonts.packages =
     with pkgs;
