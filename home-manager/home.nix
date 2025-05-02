@@ -279,6 +279,10 @@
 
     jetbrains.datagrip
 
+    # matrix
+    iamb
+    fractal-next
+
     # WEIRD SHIT
     sbcl
     clisp
