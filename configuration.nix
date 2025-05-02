@@ -13,6 +13,8 @@
 
   nix.package = pkgs.lix;
 
+  hardware.i2c.enable = true;
+
   # boot.kernelParams = [
   #   "nvidia.NVreg_EnableGpuFirmware=0"
   # ];
@@ -115,6 +117,7 @@
     extraGroups = [
       "wheel"
       "docker"
+      "i2c"
       "libvirtd"
       "kvm"
       "uinput"
@@ -233,6 +236,7 @@
     vesktop
     via
     vial
+    ddcutil
     vim
     wget
     wine

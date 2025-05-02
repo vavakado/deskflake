@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hinoirisetr = {
+      url = "git+https://git.vavakado.xyz/vavakado/hinoirisetr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     menucalc.url = "github:sumnerevans/menu-calc";
   };
 
@@ -28,6 +33,7 @@
       nixpkgs,
       home-manager,
       nixpkgs-my-fork,
+      hinoirisetr,
       ...
     }@inputs:
     let
@@ -59,6 +65,14 @@
               {
                 nixpkgs.overlays = [ overlay ];
                 nixpkgs.config.allowUnfree = true;
+              }
+            )
+            (
+              { inputs, system, ... }:
+              {
+                environment.systemPackages = [
+                  inputs.hinoirisetr.packages.${system}.default
+                ];
               }
             )
             ./configuration.nix
