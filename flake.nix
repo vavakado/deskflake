@@ -13,17 +13,10 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    umu = {
-      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hinoirisetr = {
       url = "git+https://git.vavakado.xyz/vavakado/hinoirisetr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    menucalc.url = "github:sumnerevans/menu-calc";
   };
 
   outputs =

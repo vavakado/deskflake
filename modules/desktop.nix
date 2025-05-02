@@ -35,18 +35,6 @@
     wayland.enable = true;
   };
 
-  # services.displayManager.ly.enable = true;
-
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "${pkgs.cage}/bin/cage -s -- ${pkgs.greetd.regreet}/bin/regreet";
-  #     };
-  #   };
-  # };
-  # programs.regreet.enable = true;
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -54,29 +42,4 @@
       xdg-desktop-portal-gtk
     ];
   };
-
-  # programs.wayfire = {
-  #   enable = true;
-  #   plugins = with pkgs.wayfirePlugins; [
-  #     wcm
-  #     wf-shell
-  #     wayfire-plugins-extra
-  #   ];
-  # };
-
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.gdm.enable = true;
-  #   desktopManager.gnome.enable = true;
-  # };
-  #
-  # environment.systemPackages = with pkgs; [
-  #   gnome.gnome-tweaks
-  #   gnomeExtensions.appindicator
-  #   gnomeExtensions.dash-to-dock
-  #   gnomeExtensions.blur-my-shell
-  #   gnomeExtensions.search-light
-  # ];
-  #
-  # services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
 }

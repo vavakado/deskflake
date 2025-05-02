@@ -15,10 +15,6 @@
 
   hardware.i2c.enable = true;
 
-  # boot.kernelParams = [
-  #   "nvidia.NVreg_EnableGpuFirmware=0"
-  # ];
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     avahi
@@ -43,7 +39,6 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  # boot.kernelPackages = pkgs.linuxPackages_6_1;
   boot.tmp.cleanOnBoot = true;
 
   nix.settings.experimental-features = [
@@ -57,7 +52,6 @@
     interval = "hourly";
   };
   services.flatpak.enable = true;
-  # services.xserver.digimend.enable = true;
 
   boot.loader = {
     efi = {
@@ -67,19 +61,11 @@
     systemd-boot = {
       enable = true;
     };
-    # grub = {
-    #   efiSupport = true;
-    #   device = "nodev";
-    # };
   };
 
   programs.obs-studio = {
     enable = false;
     plugins = with pkgs.obs-studio-plugins; [
-      # (obs-backgroundremoval.override {
-      #   cudaSupport = false;
-      #   cudannSupport = false;
-      # })
       obs-backgroundremoval
     ];
   };
@@ -100,11 +86,6 @@
     binfmt = true;
   };
 
-  programs.mosh = {
-    enable = true;
-    withUtempter = true;
-  };
-
   services.ollama = {
     enable = true;
   };
@@ -123,7 +104,7 @@
       "uinput"
       "dialout"
       "input"
-    ]; # Enable ‘sudo’ for the user.
+    ];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
@@ -132,16 +113,15 @@
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
   programs.dconf.enable = true;
-  services.usbmuxd = {
-    enable = true;
-    package = pkgs.usbmuxd2;
-  };
   environment.systemPackages = with pkgs; [
     (blender.override {
       cudaSupport = true;
       openUsdSupport = false;
     })
     (btop.override { cudaSupport = true; })
+    # xorg.xprop
+    # xorg.xrandr
+    # xorg.xwininfo
     adwaita-icon-theme
     anki
     bat
@@ -166,6 +146,7 @@
     go
     grim
     imagemagick
+    jellyfin-mpv-shim
     jq
     kdePackages.qt6ct
     keepassxc
@@ -175,6 +156,7 @@
     mangohud
     mold
     mpv
+    mpv-shim-default-shaders
     nemo-fileroller
     nemo-with-extensions
     nix-index
@@ -221,9 +203,6 @@
     winetricks
     wl-clipboard
     wofi
-    # xorg.xprop
-    # xorg.xrandr
-    # xorg.xwininfo
     zoxide
 
     godot-mono
@@ -231,25 +210,11 @@
 
   services.udev.packages = with pkgs; [
     vial
-    via
   ];
 
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;
-    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
-  };
-
-  programs.proxychains = {
-    enable = true;
-    package = pkgs.proxychains-ng;
-    proxies = {
-      tor = {
-        type = "socks5";
-        host = "127.0.0.1";
-        port = 9050;
-      };
-    };
   };
 
   services.samba-wsdd = {
@@ -262,19 +227,6 @@
   services.samba = {
     enable = true;
     openFirewall = true;
-  };
-
-  services.tor = {
-    enable = true;
-    # Enable Torsocks for transparent proxying of applications through Tor
-    torsocks = {
-      enable = true;
-      allowInbound = true;
-    };
-    client = {
-      enable = true;
-      dns.enable = true;
-    };
   };
 
   # i18n.inputMethod = {
@@ -329,5 +281,4 @@
 
   # DON'T FUCKING CHANGE THIS
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

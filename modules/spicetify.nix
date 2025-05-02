@@ -17,7 +17,7 @@
         # beautifulLyrics
         betterGenres
       ];
-      theme = spicePkgs.themes.comfy;
-      colorScheme = "catppuccin-mocha";
+      theme = spicePkgs.themes.orchis;
+      colorScheme = "DarkGreen";
     };
 }
