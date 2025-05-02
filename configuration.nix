@@ -137,24 +137,17 @@
     package = pkgs.usbmuxd2;
   };
   environment.systemPackages = with pkgs; [
-    # (blender.override {
-    #   cudaSupport = true;
-    # })
-    blender
+    (blender.override {
+      cudaSupport = true;
+      openUsdSupport = false;
+    })
     (btop.override { cudaSupport = true; })
-    bemenu
-    tofi
-    hyprpaper
-    hyprsunset
     adwaita-icon-theme
-    socat
     anki
-    arduino-ide
     bat
-    bottles
     chezmoi
     clang
-    distrobox
+    ddcutil
     dust
     dwarfs
     element-desktop
@@ -162,10 +155,8 @@
     fd
     ffmpeg
     file-roller
-    firefoxpwa
     flite # for narrator
     freetube
-    gamescope
     git
     git-extras
     git-lfs
@@ -174,19 +165,11 @@
     gnumake
     go
     grim
-    heroic
-    hyprshade
-    hyprutils
-    ifuse
     imagemagick
-    imgbrd-grabber
     jq
-    kanata
     kdePackages.qt6ct
     keepassxc
     kitty
-    lazydocker
-    libimobiledevice
     localsend
     mako
     mangohud
@@ -200,7 +183,6 @@
     nvtopPackages.nvidia
     nwg-look
     onefetch
-    openssl
     p7zip-rar
     pavucontrol
     picard
@@ -209,24 +191,21 @@
     playerctl
     plocate
     prismlauncher
-    protontricks
-    protonup-qt
     pv
-    qt6.qtwayland
     rawtherapee
-    revolt-desktop
     ripgrep
     rsync
     rustup
     slurp
+    socat
     solaar
     soundconverter
     sqlite
     sshfs
-    steamtinkerlaunch
     tealdeer
     telegram-desktop
     tmux
+    tofi
     tokei
     tree
     tree-sitter
@@ -234,9 +213,7 @@
     unzip
     usbutils
     vesktop
-    via
     vial
-    ddcutil
     vim
     wget
     wine
@@ -244,10 +221,9 @@
     winetricks
     wl-clipboard
     wofi
-    xdotool
-    xorg.xprop
-    xorg.xrandr
-    xorg.xwininfo
+    # xorg.xprop
+    # xorg.xrandr
+    # xorg.xwininfo
     zoxide
 
     godot-mono

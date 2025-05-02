@@ -211,77 +211,52 @@
     bun
     chromium
     cliphist
-    cmake
     conda
-    darktable
     delta
+    difftastic
     digikam
-    gallery-dl
-    gdu
-    gimp
-    gjs
-    glances
-    gocryptfs
-    graphviz
-    inkscape
-    irssi
-    libnotify
-    libreoffice
-    libtool
-    lftp
-    graphviz
-    ab-av1
-    lua51Packages.lua
-    finamp
-    lua51Packages.luarocks
-    neovide
-    obsidian
-    python3
-    swww
-    tmuxinator
-    tor-browser
-    vscode
-    feishin
-    filezilla
-    wofi-emoji
-    yazi
-    zk
-    cool-retro-term
-    tk
-    hugin
-    enblend-enfuse
-    parallel
-    yt-dlp
-    pnpm
-    davinci-resolve
-    lazysql
-    krita
-    newsflash
-    harper
-
-    hypridle
-    hyprlock
-
     elixir
     elixir-ls
+    enblend-enfuse
+    filezilla
+    gallery-dl
+    gdu
+    gjs
+    gocryptfs
+    graphviz
+    harper # spellcheck
+    hugin
+    hypridle
+    hyprlock
+    hyprpaper
+    hyprsunset
+    inkscape
     inotify-tools
-    tailwindcss-language-server
+    krita
+    lazysql
     lexical
-    postgresql
-    nodePackages.browser-sync
-    difftastic
-    gtranslator
+    libreoffice
+    lua51Packages.lua
+    lua51Packages.luarocks
+    neovide
     nixpkgs-review
+    nodePackages.browser-sync
+    obsidian
+    parallel
+    pnpm
+    postgresql
+    python3
+    tailwindcss-language-server
+    tk
     upx
+    vscode
+    wofi-emoji
+    yazi
+    yt-dlp
+    zk
 
     # godot_4
     gdtoolkit_4
-
-    jetbrains.datagrip
-
-    # matrix
-    iamb
-    fractal-next
 
     # WEIRD SHIT
     sbcl

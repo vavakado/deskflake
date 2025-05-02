@@ -175,22 +175,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-my-fork": {
-      "locked": {
-        "lastModified": 1743350066,
-        "narHash": "sha256-cN5rmivE9w9P7oC/jfmwv0lM8B0gw/WK0uIjT73zU7A=",
-        "owner": "vavakado",
-        "repo": "nixpkgs",
-        "rev": "203fdbd94a7c06ffaea10ed387d5e036b0c6ac95",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vavakado",
-        "ref": "toggle-openusd-blender",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1746055187,
@@ -278,7 +262,6 @@
         "home-manager": "home-manager",
         "menucalc": "menucalc",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-my-fork": "nixpkgs-my-fork",
         "nixpkgs-stable": "nixpkgs-stable",
         "spicetify-nix": "spicetify-nix",
         "umu": "umu",
