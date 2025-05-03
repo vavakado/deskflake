@@ -26,10 +26,9 @@
   gtk.cursorTheme.name = "GoogleDot-White";
   # gtk.cursorTheme.package = pkgs.apple-cursor;
   # gtk.cursorTheme.name = "macOS";
-  gtk.theme.package = pkgs.whitesur-gtk-theme;
-  gtk.theme.name = "WhiteSur-Dark";
-  gtk.iconTheme.package = pkgs.whitesur-icon-theme;
-  gtk.iconTheme.name = "WhiteSur";
+  gtk.theme.package = pkgs.gruvbox-material-gtk-theme;
+  gtk.theme.name = "Gruvbox-Material-Dark";
+  gtk.iconTheme.name = "Gruvbox-Material-Dark";
 
   programs = {
     direnv = {
