@@ -253,6 +253,8 @@
     yazi
     yt-dlp
     zk
+    twitch-tui
+    hyfetch
 
     # godot_4
     gdtoolkit_4

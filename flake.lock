@@ -67,11 +67,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1746216147,
-        "narHash": "sha256-cJrakA/Xa1l+9hV14HnL4mfZLV2owIARAhJUNCMYmVE=",
+        "lastModified": 1746270329,
+        "narHash": "sha256-e78RlYl5VoOgHY8iLspXsXaBhjQBYb+DXzgNlGshKpo=",
         "ref": "refs/heads/main",
-        "rev": "6ca50ac2bb426a1becfbbc43888e700248cd28df",
-        "revCount": 31,
+        "rev": "47bed52851a41a293bd1a8bbcd746e29ea2e6387",
+        "revCount": 43,
         "type": "git",
         "url": "https://git.vavakado.xyz/vavakado/hinoirisetr"
       },
