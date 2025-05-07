@@ -255,6 +255,8 @@
     zk
     twitch-tui
     hyfetch
+    exiftool
+    audacity
 
     # godot_4
     gdtoolkit_4
