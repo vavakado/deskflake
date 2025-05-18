@@ -13,6 +13,25 @@
 
   nix.package = pkgs.lix;
 
+  boot.supportedFilesystems = [ "ntfs" ];
+  # fileSystems."/mnt/corpse" = {
+  #   device = "/dev/disk/by-uuid/01D9C60AB3801AB0";
+  #   fsType = "nfts-3g";
+  #   options = [
+  #     "uid=1000"
+  #     "gid=100"
+  #     "dmask=027"
+  #     "fmask=137"
+  #     "rw"
+  #   ];
+  # };
+
+  fileSystems."/mnt/vault156" = {
+    device = "/dev/disk/by-uuid/a607cf11-85e9-4d2a-b9b0-ccc1fa23e9a5";
+    fsType = "ext4";
+    options = [ "x-systemd.automount" ];
+  };
+
   hardware.i2c.enable = true;
 
   programs.nix-ld.enable = true;
@@ -75,6 +94,7 @@
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -190,6 +210,8 @@
     tofi
     tokei
     tree
+    rustdesk
+    rustdesk-server
     tree-sitter
     udiskie
     unzip

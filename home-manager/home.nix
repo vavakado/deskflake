@@ -257,6 +257,10 @@
     hyfetch
     exiftool
     audacity
+    dysk
+    hyprshade
+    tmuxinator
+    golangci-lint
 
     # godot_4
     gdtoolkit_4

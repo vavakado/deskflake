@@ -14,7 +14,7 @@
         # hidePodcasts
         # powerBar
         shuffle # shuffle+ (special characters are sanitized out of extension names)
-        # beautifulLyrics
+        beautifulLyrics
         betterGenres
       ];
       theme = spicePkgs.themes.orchis;
