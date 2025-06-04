@@ -10,5 +10,6 @@
     enable = true;
     liveRestore = false;
     enableNvidia = true;
+    enableOnBoot = true;
   };
 }
