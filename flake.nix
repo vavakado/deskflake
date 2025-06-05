@@ -17,6 +17,11 @@
       url = "git+https://git.vavakado.xyz/vavakado/hinoirisetr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ayugram-desktop = {
+      type = "git";
+      submodules = true;
+      url = "https://github.com/ndfined-crp/ayugram-desktop/";
+    };
   };
 
   outputs =
@@ -43,6 +48,7 @@
               {
                 environment.systemPackages = [
                   inputs.hinoirisetr.packages.${system}.default
+                  inputs.ayugram-desktop.packages.${system}.ayugram-desktop
                 ];
               }
             )

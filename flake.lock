@@ -40,6 +40,26 @@
         "type": "github"
       }
     },
+    "ayugram-desktop": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1748762391,
+        "narHash": "sha256-g1IQJBmMDSD1DUGi1Wr8MXankXFNJmK5dN+1yzZaf3M=",
+        "ref": "refs/heads/release",
+        "rev": "57496fe317f1c1b7922ccc47852bc9f9436904dd",
+        "revCount": 311,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/ndfined-crp/ayugram-desktop/"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/ndfined-crp/ayugram-desktop/"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -156,6 +176,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1748460289,
+        "narHash": "sha256-7doLyJBzCllvqX4gszYtmZUToxKvMUrg45EUWaUYmBg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "96ec055edbe5ee227f28cdbc3f1ddf1df5965102",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1744536153,
         "narHash": "sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg/N38=",
         "owner": "NixOS",
@@ -170,7 +206,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1747327360,
         "narHash": "sha256-LSmTbiq/nqZR9B2t4MRnWG7cb0KVNU70dB7RT4+wYK4=",
@@ -186,7 +222,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1743448293,
         "narHash": "sha256-bmEPmSjJakAp/JojZRrUvNcDX2R5/nuX6bm+seVaGhs=",
@@ -205,9 +241,10 @@
     "root": {
       "inputs": {
         "ags": "ags",
+        "ayugram-desktop": "ayugram-desktop",
         "hinoirisetr": "hinoirisetr",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"
@@ -215,7 +252,7 @@
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1745462120,
@@ -285,7 +322,7 @@
     "zen-browser": {
       "inputs": {
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1747538254,
