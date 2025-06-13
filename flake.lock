@@ -87,11 +87,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1747578156,
-        "narHash": "sha256-85sACyxju6aa7YP6o106M9iGMnNEJ/F5lFEsi45Dfy8=",
+        "lastModified": 1749490934,
+        "narHash": "sha256-tsngmaiJPdjk/e+TPr/n97APJVtD1gsYRfGv2mV1aSg=",
         "ref": "refs/heads/main",
-        "rev": "1d753374715070b655db96ba9561cbfae920d546",
-        "revCount": 46,
+        "rev": "e9cc31fa406deaeb0744c4f4330178c0e2d14ad2",
+        "revCount": 51,
         "type": "git",
         "url": "https://git.vavakado.xyz/vavakado/hinoirisetr"
       },
@@ -255,11 +255,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1745462120,
-        "narHash": "sha256-TbVjPOl+Cg5vZ7TIn1KpQ8SOfHKD6OEgu84b6YSCfKE=",
+        "lastModified": 1749436897,
+        "narHash": "sha256-OkDtaCGQQVwVFz5HWfbmrMJR99sFIMXHCHEYXzUJEJY=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "79d3acd1a7e67fb9315fa5c5556eb6adf93dc2da",
+        "rev": "e7876c387e35dc834838aff254d8e74cf5bd4f19",
         "type": "github"
       },
       "original": {

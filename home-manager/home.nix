@@ -265,6 +265,11 @@
     golangci-lint
     libnotify
     calibre
+    ddate
+    font-manager
+    comma
+    gimp3
+    pandoc
 
     # godot_4
     gdtoolkit_4
