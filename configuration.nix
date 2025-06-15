@@ -163,7 +163,8 @@
     element-desktop
     fastfetch
     fd
-    ffmpeg
+    ffmpeg-full
+    ab-av1
     file-roller
     flite # for narrator
     freetube

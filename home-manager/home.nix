@@ -110,7 +110,7 @@
         save = 300000;
         size = 100000;
       };
-      initExtra = ''
+      initContent = ''
         any-nix-shell zsh | source /dev/stdin
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
@@ -245,7 +245,6 @@
     parallel
     pnpm
     postgresql
-    python3
     tailwindcss-language-server
     tk
     upx
