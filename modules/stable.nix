@@ -1,4 +1,4 @@
 { inputs, system, ... }:
 {
-  environment.systemPackages = with inputs.nixpkgs-stable.legacyPackages."${system}"; [ ];
+  environment.systemPackages = with inputs.nixpkgs-stable.legacyPackages."${system}"; [ pix ];
 }

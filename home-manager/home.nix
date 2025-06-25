@@ -32,6 +32,7 @@
   gtk.iconTheme.name = "WhiteSur";
 
   programs = {
+
     direnv = {
       enable = true;
       enableBashIntegration = true; # see note on other shells below
@@ -241,7 +242,6 @@
     neovide
     nixpkgs-review
     nodePackages.browser-sync
-    obsidian
     parallel
     pnpm
     postgresql
@@ -269,9 +269,15 @@
     comma
     gimp3
     pandoc
-
+    hyperfine
+    file
+    patchelf
+    thunderbird-bin
     # godot_4
+    vtsls
     gdtoolkit_4
+    astro-language-server
+    bitwarden
 
     # WEIRD SHIT
     sbcl
