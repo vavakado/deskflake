@@ -12,10 +12,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,7 +68,6 @@
         };
         modules = [
           ./home-manager/home.nix
-          inputs.ags.homeManagerModules.default
         ];
       };
     };

@@ -16,11 +16,11 @@
     settings = {
       substituters = [
         "https://cache.nixos.org/"
-        "https://cache.garnix.io"
+        # "https://cache.garnix.io"
       ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+        # "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
       trusted-users = [
         "root"
@@ -74,6 +74,8 @@
     portaudio
     kdePackages.qtbase
     lzo
+
+    nss
     libimobiledevice
   ];
 
@@ -171,14 +173,20 @@
   environment.variables = {
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
+
+  programs.niri.enable = true;
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
     (blender.override {
       cudaSupport = true;
       openUsdSupport = false;
     })
-    (whisper-cpp.override { cudaSupport = true; })
     (btop.override { cudaSupport = true; })
+
+    waybar
+    fuzzel
+    alacritty
+    xwayland-satellite
     # xorg.xprop
     # xorg.xrandr
     # xorg.xwininfo

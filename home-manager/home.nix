@@ -147,23 +147,6 @@
       enableZshIntegration = true;
     };
 
-    ags = {
-      enable = true;
-
-      # null or path, leave as null if you don't want hm to manage the config
-      configDir = null;
-
-      # additional packages to add to gjs's runtime
-      extraPackages = [
-        pkgs.sass
-        inputs.ags.packages."x86_64-linux".hyprland
-        inputs.ags.packages."x86_64-linux".mpris
-        inputs.ags.packages."x86_64-linux".wireplumber
-        inputs.ags.packages."x86_64-linux".tray
-        inputs.ags.packages."x86_64-linux".network
-        inputs.ags.packages."x86_64-linux".apps
-      ];
-    };
     zathura = {
       enable = true;
       options = {
@@ -277,7 +260,9 @@
     vtsls
     gdtoolkit_4
     astro-language-server
-    bitwarden
+
+    wl-color-picker
+    gammastep
 
     # WEIRD SHIT
     sbcl

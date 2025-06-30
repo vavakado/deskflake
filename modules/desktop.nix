@@ -30,10 +30,15 @@
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  services.displayManager.sddm = {
+  services.displayManager.gdm = {
     enable = true;
-    wayland.enable = true;
+    # wayland.enable = true;
   };
+
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   x11Support = false;
+  # };
 
   xdg.portal = {
     enable = true;
