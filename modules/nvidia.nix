@@ -12,5 +12,6 @@
 
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
+  hardware.nvidia-container-toolkit.enable = true;
   nixpkgs.config.cudaSupport = true;
 }

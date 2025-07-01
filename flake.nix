@@ -27,6 +27,10 @@
       url = "https://github.com/ndfined-crp/ayugram-desktop/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -34,6 +38,7 @@
       self,
       nixpkgs,
       home-manager,
+      lix-module,
       ...
     }@inputs:
     let
@@ -58,6 +63,7 @@
               }
             )
             ./configuration.nix
+            lix-module.nixosModules.default
           ];
         };
       };
