@@ -32,7 +32,6 @@
   gtk.iconTheme.name = "WhiteSur";
 
   programs = {
-
     direnv = {
       enable = true;
       enableBashIntegration = true; # see note on other shells below
@@ -266,8 +265,6 @@
     hunspellDicts.ru_RU
     hunspellDicts.he-il
     hunspellDicts.tok
-    wl-color-picker
-    gammastep
     zenity
 
     # WEIRD SHIT

@@ -173,7 +173,6 @@
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
 
-  programs.niri.enable = true;
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
     (blender.override {
@@ -182,9 +181,7 @@
     btop
 
     waybar
-    fuzzel
-    alacritty
-    xwayland-satellite
+
     # xorg.xprop
     # xorg.xrandr
     # xorg.xwininfo
