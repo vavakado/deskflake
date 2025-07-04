@@ -260,9 +260,15 @@
     vtsls
     gdtoolkit_4
     astro-language-server
-
+    languagetool
+    hunspell
+    hunspellDicts.en_US-large
+    hunspellDicts.ru_RU
+    hunspellDicts.he-il
+    hunspellDicts.tok
     wl-color-picker
     gammastep
+    zenity
 
     # WEIRD SHIT
     sbcl
