@@ -31,6 +31,8 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags.url = "github:aylur/ags";
+    astal.url = "github:aylur/astal";
   };
 
   outputs =

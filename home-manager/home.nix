@@ -31,7 +31,33 @@
   gtk.iconTheme.package = pkgs.whitesur-icon-theme;
   gtk.iconTheme.name = "WhiteSur";
 
+  imports = [ inputs.ags.homeManagerModules.default ];
+
   programs = {
+    ags = {
+      enable = true;
+
+      # symlink to ~/.config/ags
+      configDir = ./ags;
+
+      # additional packages and executables to add to gjs's runtime
+      extraPackages = [
+        inputs.astal.packages.${pkgs.system}.apps
+        inputs.astal.packages.${pkgs.system}.auth
+        inputs.astal.packages.${pkgs.system}.battery
+        inputs.astal.packages.${pkgs.system}.bluetooth
+        inputs.astal.packages.${pkgs.system}.cava
+        inputs.astal.packages.${pkgs.system}.greet
+        inputs.astal.packages.${pkgs.system}.hyprland
+        inputs.astal.packages.${pkgs.system}.mpris
+        inputs.astal.packages.${pkgs.system}.network
+        inputs.astal.packages.${pkgs.system}.notifd
+        inputs.astal.packages.${pkgs.system}.powerprofiles
+        inputs.astal.packages.${pkgs.system}.tray
+        inputs.astal.packages.${pkgs.system}.wireplumber
+      ];
+    };
+
     direnv = {
       enable = true;
       enableBashIntegration = true; # see note on other shells below
@@ -189,6 +215,7 @@
 
   home.packages = with pkgs; [
     (fortune.override { withOffensive = true; })
+    inputs.astal.packages.${pkgs.system}.io
     any-nix-shell
     bc
     bun
@@ -266,6 +293,10 @@
     hunspellDicts.he-il
     hunspellDicts.tok
     zenity
+
+    fennel
+    love
+    fennel-ls
 
     # WEIRD SHIT
     sbcl
