@@ -173,6 +173,12 @@
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "adwaita-dark";
+  };
+
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
     (blender.override {
@@ -243,6 +249,8 @@
     slurp
     socat
     solaar
+    inputs.quickshell.packages.${pkgs.system}.default
+    kdePackages.qtdeclarative
     soundconverter
     sqlite
     sshfs

@@ -33,6 +33,10 @@
     };
     ags.url = "github:aylur/ags";
     astal.url = "github:aylur/astal";
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

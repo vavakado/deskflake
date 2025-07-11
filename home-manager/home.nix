@@ -12,14 +12,14 @@
 
   home.stateVersion = "24.11"; # don't change it bro
 
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt6;
-    };
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "kde6";
+  #   style = {
+  #     name = "adwaita-dark";
+  #     # package = pkgs.adwaita-qt6;
+  #   };
+  # };
 
   gtk.enable = true;
   # gtk.cursorTheme.package = pkgs.google-cursor;
@@ -28,8 +28,8 @@
   gtk.cursorTheme.name = "macOS";
   gtk.theme.package = pkgs.whitesur-gtk-theme;
   gtk.theme.name = "WhiteSur-Dark";
-  gtk.iconTheme.package = pkgs.whitesur-icon-theme;
-  gtk.iconTheme.name = "WhiteSur";
+  gtk.iconTheme.package = pkgs.adwaita-icon-theme;
+  gtk.iconTheme.name = "Adwaita";
 
   imports = [ inputs.ags.homeManagerModules.default ];
 
@@ -293,10 +293,13 @@
     hunspellDicts.he-il
     hunspellDicts.tok
     zenity
-
     fennel
     love
     fennel-ls
+    dino
+    profanity
+    gajim
+    distrobox
 
     # WEIRD SHIT
     sbcl
