@@ -9,7 +9,6 @@
       userServices = true;
       workstation = true;
     };
-    openFirewall = true;
   };
 
   services.zerotierone.enable = true;
@@ -22,5 +21,5 @@
     port = 5353; # Change dnsmasq to use port 5353
   };
   services.resolved.extraConfig = "DNSStubListener=no";
-  services.openssh.enable = true;
+  networking.firewall.enable = false;
 }
