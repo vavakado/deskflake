@@ -3,14 +3,6 @@
   ...
 }:
 {
-  services.xserver = {
-    xkb.extraLayouts.colemak-caps = {
-      description = "Colemak layout wiht no caps remap";
-      languages = [ "eng" ];
-      symbolsFile = ../us;
-    };
-  };
-
   systemd = {
     user.services.hyprpolkitagent = {
       description = "hyprpolkitagent";
