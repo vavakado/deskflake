@@ -67,7 +67,7 @@
                 ];
               }
             )
-            ./configuration.nix
+            ./nixos/configuration.nix
             lix-module.nixosModules.default
           ];
         };
