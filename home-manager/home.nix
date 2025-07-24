@@ -179,7 +179,6 @@
   ];
 
   home.packages = with pkgs; [
-    (fortune.override { withOffensive = true; })
     any-nix-shell
     bc
     bun
@@ -238,7 +237,6 @@
     libnotify
     calibre
     ddate
-    font-manager
     comma
     gimp3
     pandoc
@@ -264,6 +262,13 @@
     profanity
     gajim
     distrobox
+    tetex
+    libavif
+    blahaj
+    uutils-coreutils-noprefix
+    wiki-tui
+    rusty-man
+    kondo
 
     # WEIRD SHIT
     sbcl

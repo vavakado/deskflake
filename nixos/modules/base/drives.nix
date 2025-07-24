@@ -1,7 +1,7 @@
 {
   boot.supportedFilesystems = [ "ntfs" ];
   fileSystems."/mnt/corpse" = {
-    device = "/dev/disk/by-uuid/01D9C60AB3801AB0";
+    device = "/dev/disk/by-partuuid/2be7643d-46e7-96e2-d242-f873181ab5b4";
     fsType = "ntfs-3g";
     options = [
       "uid=1000"
@@ -11,11 +11,5 @@
       "rw"
       "x-systemd.automount"
     ];
-  };
-
-  fileSystems."/mnt/vault156" = {
-    device = "/dev/disk/by-uuid/a607cf11-85e9-4d2a-b9b0-ccc1fa23e9a5";
-    fsType = "ext4";
-    options = [ "x-systemd.automount" ];
   };
 }

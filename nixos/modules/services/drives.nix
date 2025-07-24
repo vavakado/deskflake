@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.samba-wsdd = {
     enable = true;
@@ -10,4 +11,7 @@
     enable = true;
     openFirewall = true;
   };
+  environment.systemPackages = with pkgs; [
+    udiskie
+  ];
 }

@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -26,6 +27,20 @@
     enable = true;
     wayland.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    ddcutil
+    inputs.quickshell.packages.${pkgs.system}.default
+    kdePackages.qt6ct
+    kdePackages.qtdeclarative
+    grim
+    wofi
+    wl-clipboard
+    tofi
+    slurp
+    kitty
+    mako
+  ];
 
   xdg.portal = {
     enable = true;

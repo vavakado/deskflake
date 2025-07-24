@@ -11,6 +11,7 @@
   ];
   environment.systemPackages = with pkgs; [
     vial
+    solaar
   ];
 
   i18n.inputMethod = {

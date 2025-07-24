@@ -13,4 +13,12 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+    flite # for minecraft narrator
+    wine
+    wine64
+    winetricks
+  ];
 }
