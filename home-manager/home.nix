@@ -269,6 +269,8 @@
     wiki-tui
     rusty-man
     kondo
+    gdbgui
+    gdb
 
     # WEIRD SHIT
     sbcl

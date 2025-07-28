@@ -8,6 +8,7 @@
   ];
 
   nix = {
+    package = pkgs.lix;
     settings = {
       substituters = [
         "https://cache.nixos.org/"
