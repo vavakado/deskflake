@@ -1,0 +1,12 @@
+diff --git a/src/output/icons.rs b/src/output/icons.rs
+index 6fd06ce8..e727d2a2 100644
+--- a/src/output/icons.rs
++++ b/src/output/icons.rs
+@@ -524,6 +524,7 @@ const EXTENSION_ICONS: Map<&'static str, char> = phf_map! {
+     "bib"            => Icons::LANG_TEX,         // 
+     "bin"            => Icons::BINARY,           // 
+     "blend"          => '\u{f00ab}',             // 󰂫
++    "blip"           => '\u{f0172}',             // 󰅲
+     "bmp"            => Icons::IMAGE,            // 
+     "br"             => Icons::COMPRESSED,       // 
+     "brd"            => Icons::EDA_PCB,          // 

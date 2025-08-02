@@ -18,7 +18,6 @@
     };
     hinoirisetr = {
       url = "git+https://git.vavakado.xyz/vavakado/hinoirisetr";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     ayugram-desktop = {
       type = "git";

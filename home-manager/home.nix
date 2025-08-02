@@ -139,6 +139,9 @@
     eza = {
       enable = true;
       icons = "auto";
+      package = pkgs.eza.overrideAttrs (oldAttrs: {
+        patches = [ ./blip-icon.patch ];
+      });
     };
     starship = {
       enable = true;
@@ -269,8 +272,11 @@
     wiki-tui
     rusty-man
     kondo
-    gdbgui
-    gdb
+    python3
+    (tree-sitter.override {
+      webUISupport = true;
+    })
+    emscripten
 
     # WEIRD SHIT
     sbcl

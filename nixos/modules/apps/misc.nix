@@ -16,7 +16,6 @@
     go
     godot-mono
     jq
-    tree-sitter
     rustup
     mold
     nixfmt-rfc-style
