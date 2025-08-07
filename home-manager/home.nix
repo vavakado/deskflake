@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  inputs,
+  config,
   ...
 }:
 {
@@ -41,7 +41,10 @@
     neovim = {
       enable = true;
       extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
-      extraPackages = [ pkgs.imagemagick ];
+      extraPackages = [
+        pkgs.imagemagick
+        pkgs.inotify-tools
+      ];
       extraWrapperArgs = [
         "--suffix"
         "LIBRARY_PATH"
@@ -105,7 +108,7 @@
         ];
       };
       syntaxHighlighting.enable = true;
-      dotDir = ".config/zsh";
+      dotDir = config.xdg.configHome + "/zsh";
       history = {
         save = 300000;
         size = 100000;
@@ -183,22 +186,14 @@
 
   home.packages = with pkgs; [
     any-nix-shell
-    bc
-    bun
     chromium
     cliphist
-    conda
     delta
     difftastic
     digikam
-    elixir
-    elixir-ls
     enblend-enfuse
-    filezilla
     gallery-dl
     gdu
-    gjs
-    gocryptfs
     graphviz
     harper # spellcheck
     hugin
@@ -207,39 +202,26 @@
     hyprpaper
     hyprsunset
     inkscape
-    inotify-tools
     krita
     lazysql
-    lexical
     libreoffice
     lua51Packages.lua
     lua51Packages.luarocks
     neovide
     nixpkgs-review
-    nodePackages.browser-sync
     parallel
     pnpm
-    postgresql
-    tailwindcss-language-server
-    tk
-    upx
     vscode
     wofi-emoji
     yazi
     yt-dlp
-    zk
-    twitch-tui
     hyfetch
     exiftool
-    audacity
     dysk
     swww
     hyprshade
     tmuxinator
-    golangci-lint
-    libnotify
     calibre
-    ddate
     comma
     gimp3
     pandoc
@@ -248,10 +230,6 @@
     patchelf
     thunderbird-bin
     # godot_4
-    vtsls
-    gdtoolkit_4
-    astro-language-server
-    languagetool
     hunspell
     hunspellDicts.en_US-large
     hunspellDicts.ru_RU
@@ -259,28 +237,18 @@
     hunspellDicts.tok
     zenity
     fennel
-    love
-    fennel-ls
-    dino
-    profanity
     gajim
     distrobox
     tetex
-    libavif
     blahaj
     uutils-coreutils-noprefix
     wiki-tui
     rusty-man
     kondo
     python3
-    (tree-sitter.override {
-      webUISupport = true;
-    })
-    emscripten
-
-    # WEIRD SHIT
-    sbcl
-    clisp
+    tree-sitter
+    komikku
+    kcov
     ((emacsPackagesFor emacs30-pgtk).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
