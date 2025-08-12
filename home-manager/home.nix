@@ -249,6 +249,7 @@
     tree-sitter
     komikku
     kcov
+    uxn
     ((emacsPackagesFor emacs30-pgtk).emacsWithPackages (epkgs: [
       epkgs.vterm
     ]))
