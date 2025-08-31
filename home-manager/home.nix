@@ -24,8 +24,10 @@
   gtk.enable = true;
   # gtk.cursorTheme.package = pkgs.google-cursor;
   # gtk.cursorTheme.name = "GoogleDot-White";
-  gtk.cursorTheme.package = pkgs.apple-cursor;
-  gtk.cursorTheme.name = "macOS";
+  gtk.cursorTheme = {
+    package = pkgs.apple-cursor;
+    name = "macOS";
+  };
   gtk.theme.package = pkgs.whitesur-gtk-theme;
   gtk.theme.name = "WhiteSur-Dark";
   gtk.iconTheme.package = pkgs.adwaita-icon-theme;
