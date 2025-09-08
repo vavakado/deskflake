@@ -51,7 +51,7 @@
     zoxide
     # just apaps
     anki
-    jellyfin-mpv-shim
+    # jellyfin-mpv-shim TODO: uncomment whenever qtweb updates or smth
     localsend
     mpv
     mpv-shim-default-shaders

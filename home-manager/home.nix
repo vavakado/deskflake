@@ -244,14 +244,14 @@
     tetex
     blahaj
     uutils-coreutils-noprefix
-    wiki-tui
-    rusty-man
     kondo
     python3
     tree-sitter
     komikku
     kcov
     vtsls
+
+    aseprite
 
     elixir-ls
     ((emacsPackagesFor emacs30-pgtk).emacsWithPackages (epkgs: [
